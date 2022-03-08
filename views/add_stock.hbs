@@ -23,9 +23,8 @@
 				{{/if}}
 			{{/if}}
 		</header>
-	<main>
-		<p>This is the add stock levels page.</p>
-        <form method="post" action="/add_stock" enctype="multipart/form-data">
+	<main style="display: flex; justify-content: center;">
+        <form method="post" action="/add_stock" enctype="multipart/form-data" class="add_stock">
             <label for="title">Book Name</label>
 			<input type="text" name="title" value="{{body.title}}"/>
 			<label for="author">Author</label>
@@ -40,11 +39,13 @@
 			<input type="file" name="thumbnail" accept="image/*, .jpg, .jpeg, .png"/>
 			<label for="trade_price">Trade Price</label>
 			<input class="trade_price" type="range" min="1" max="100" name="trade_price" value="{{body.trade_value}}"/>
-			<p name="trade_value">VALUE: <p class="trade_value"></p></p>
+			<p class="trade_value" style="width: 100%; text-align: center;"></p>
+			<label for="retail_price">Retail Price</label>
 			<input class="retail_price" type="range" min="1" max="100" name="retail_price" value="{{body.retail_value}}"/>
-			<p name="retail_value">VALUE: <p class="retail_value"></p></p>
+			<p class="retail_value" style="width: 100%; text-align: center;"></p>
+			<label for="quantity">Quantity</label>
 			<input class="quantity" type="range" min="1" max="20" name="quantity" value="{{body.quantity}}"/>
-			<p name="quantity">VALUE: <p class="quantity"></p></p>
+			<p class="quantity" style="width: 100%; text-align: center;"></p>
 			<input type="submit" value="Submit"/>
         </form>
 	</main>

@@ -78,6 +78,7 @@ router.post('/add_stock', async context => {
 	file.filename = `/uploads/${originalName}`
 	console.log(value)
 	await add_stock(value)
+	context.response.redirect('/stock')
 })
 
 router.post('/login', async context => {

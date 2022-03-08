@@ -72,12 +72,14 @@ p, legend {
 }
 
 main {
-	max-width: 800px;
+	max-width: 1000px;
 	margin: auto;
+	height: 80%;
 	margin-top: 2em;
 	padding: 2em;
 	box-sizing: border-box;
 	background-color: lightgray;
+	height: 40em;
 }
 
 article {
@@ -301,4 +303,40 @@ form img {
 	top: 1.5em;
 	left: 1em;
 	height: 50px;
+}
+
+
+form.add_stock {
+	display: flex;
+	overflow: auto;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+}
+
+.add_stock > label {
+	width: 100%;
+	height: 5%;
+	text-align:center;
+	padding: 1vw;
+	font-weight: bold;
+}
+
+.add_stock > input {
+	width: 40%;
+	text-align: center;
+	height: 10%;
+}
+
+.add_stock > input[type="range"]{
+	width: 100%;
+}
+
+.add_stock > input[type="file"]{
+	font-size: 1.5em;
+	border: 1px solid black;
+	padding: 1vw;
+	height: 20%;
+	align: center;
 }
