@@ -18,9 +18,17 @@ trade_slider.oninput = function() {
 }
 
 let retail_slider = document.querySelector("input.retail_price")
-retail_value_slide = document.querySelector("body > main > form > p.retail_value")
+let retail_value_slide = document.querySelector("body > main > form > p.retail_value")
 retail_value_slide.innerHTML = retail_slider.value
 
-slider.oninput = function() {
+retail_slider.oninput = function() {
 	retail_value_slide.innerHTML = this.value
+}
+
+let quantity_slider = document.querySelector("input.quantity")
+let quantity_value_slide = document.querySelector("body > main > form > p.quantity")
+quantity_value_slide.innerHTML = quantity_slider.value
+
+quantity_slider.oninput = function() {
+	quantity_value_slide.innerHTML = this.value
 }
