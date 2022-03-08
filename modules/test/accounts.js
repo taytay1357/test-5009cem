@@ -1,7 +1,7 @@
-export async function login(data) {
+// export async function login(data) {
 
-}
+// }
 
-export async function register(data){
+// export async function register(data){
     
-}
+// }

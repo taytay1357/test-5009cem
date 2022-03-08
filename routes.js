@@ -43,7 +43,6 @@ router.post('/register', async context => {
 
 router.get('/logout', context => {
   // context.cookies.set('authorised', null) // this does the same
-  const authorised = context.cookies.get('authorised')
   const admin = context.cookies.get('admin')
   context.cookies.delete('authorised')
   if( admin ){

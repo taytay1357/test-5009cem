@@ -26,8 +26,25 @@
 	<main>
 		<p>This is the add stock levels page.</p>
         <form>
-            <label></label>
-
+            <label for="title">Book Name</label>
+			<input type="text" name="title"/>
+			<label for="author">Author</label>
+			<input type="text" name="author"/>
+			<label for="publication-date">Date</label>
+			<input type="date" name="publication-date"/>
+			<label for="isbn">ISBN-13</label>
+			<input type="number" name="isbn"/>
+			<label for="description">Description</label>
+			<input type="text" name="description"/>
+			<label for="thumbnail">Thumbnail Image</label>
+			<input type="file" name="thumbnail"/>
+			<label for="trade_price">Trade Price</label>
+			<input class="trade_price" type="range" min="1" max="100" name="trade_price"/>
+			<p name="trade_value">VALUE: <p class="trade_value"></p></p>
+			<input class="retail_price" type="range" min="1" max="100" name="retail_price"/>
+			<p name="retail_value">VALUE: <p class="retail_value"></p></p>
+			<input class="trade_price" type="range" min="1" max="100" name="trade_price"/>
+			<p name="trade_value">VALUE: <p class="trade_value"></p></p>
         </form>
 	</main>
 	</body>
