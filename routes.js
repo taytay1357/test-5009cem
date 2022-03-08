@@ -7,6 +7,7 @@ import { Handlebars } from 'https://deno.land/x/handlebars/mod.ts'
 // import { parse } from 'https://deno.land/std/flags/mod.ts'
 
 import { login, register } from './modules/accounts.js'
+import { add_stock } from './modules/stock.js'
 
 const handle = new Handlebars({ defaultLayout: '' })
 
@@ -66,6 +67,15 @@ router.get('/add_stock', async context => {
 	const data = { authorised, admin }
 	const body = await handle.renderView('add_stock', data)
 	context.response.body = body
+})
+
+router.post('/add_stock', async context => {
+	const body = context.request.body({ type: 'form' })
+	const value = await body.value
+	const obj = Object.fromEntries(value)
+	console.log(obj)
+	await add_stock(obj)
+	context.response.redirect('/')
 })
 
 router.post('/login', async context => {
