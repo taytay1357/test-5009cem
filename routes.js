@@ -46,6 +46,11 @@ router.get('/logout', context => {
   context.response.redirect('/')
 })
 
+router.get('/admin', async context => {
+	const body = await handle.renderView('admin')
+	context.response.body = body
+})
+
 router.post('/login', async context => {
 	console.log('POST /login')
 	const body = context.request.body({ type: 'form' })
@@ -55,7 +60,10 @@ router.post('/login', async context => {
 	try {
 		const username = await login(obj)
 		context.cookies.set('authorised', username)
-		context.response.redirect('/foo')
+		if (username === 'admin'){
+			context.cookies.set('admin', username)
+			context.response.redirect('/admin')
+		}
 	} catch(err) {
 		console.log(err)
 		context.response.redirect('/login')

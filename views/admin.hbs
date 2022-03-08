@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Admin Page</title>
+		<meta name="description" content="form to add new books">
+		<meta name="author" content="Josh Taylor">
+		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+		<link href="/style.css" type="text/css" rel="stylesheet" />
+		<script type="module" src="/main.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Admin</h1>
+			{{#if authorised}}
+				<a href="/logout">Log out</a>
+			{{else}}
+				<a href="/login">Log in</a>
+			{{/if}}
+            <a href="/stock">Stock Levels</a>
+		</header>
+	<main>
+		<p>This is the admin page. Only administrator users can see this.</p>
+		{{#if authorised}}
+			<p><a href="/foo">Foo Bar</a></p>
+		{{/if}}
+
+	</main>
+	</body>
+</html>
