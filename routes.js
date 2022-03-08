@@ -15,7 +15,8 @@ const router = new Router()
 // the routes defined here
 router.get('/', async context => {
 	const authorised = context.cookies.get('authorised')
-	const data = { authorised }
+	const admin = context.cookies.get('admin')
+	const data = { authorised, admin }
 	const body = await handle.renderView('home', data)
 	context.response.body = body
 })
@@ -42,12 +43,29 @@ router.post('/register', async context => {
 
 router.get('/logout', context => {
   // context.cookies.set('authorised', null) // this does the same
+  const authorised = context.cookies.get('authorised')
+  const admin = context.cookies.get('admin')
   context.cookies.delete('authorised')
+  if( admin ){
+	  context.cookies.delete('admin')
+  }
   context.response.redirect('/')
 })
 
-router.get('/admin', async context => {
-	const body = await handle.renderView('admin')
+
+router.get('/stock', async context => {
+	const authorised = context.cookies.get('authorised')
+	const admin = context.cookies.get('admin')
+	const data = { authorised, admin }
+	const body = await handle.renderView('stock', data)
+	context.response.body = body
+})
+
+router.get('/add_stock', async context => {
+	const authorised = context.cookies.get('authorised')
+	const admin = context.cookies.get('admin')
+	const data = { authorised, admin }
+	const body = await handle.renderView('add_stock', data)
 	context.response.body = body
 })
 
@@ -59,11 +77,12 @@ router.post('/login', async context => {
 	console.log(obj)
 	try {
 		const username = await login(obj)
-		context.cookies.set('authorised', username)
 		if (username === 'admin'){
 			context.cookies.set('admin', username)
-			context.response.redirect('/admin')
+		} else {
+			context.cookies.set('authorised', username)
 		}
+		context.response.redirect('/')
 	} catch(err) {
 		console.log(err)
 		context.response.redirect('/login')

@@ -1,24 +1,22 @@
-
 <!doctype html>
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Home Page</title>
+		<title>Add Stock</title>
 		<meta name="description" content="form to add new books">
-		<meta name="author" content="Mark Tyers">
+		<meta name="author" content="Josh Taylor">
 		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
 		<link href="/style.css" type="text/css" rel="stylesheet" />
 		<script type="module" src="/main.js"></script>
 	</head>
 	<body>
 		<header>
-			<h1>Home</h1>
+			<h1>Add Stock</h1>
 			{{#if authorised}}
 				<a href="/logout">Log out</a>
 			{{else}}
 				{{#if admin}}
-					<a href="/stock">Stock Levels</a>
 					<a href="/logout">Log out</a>
 				{{else}}
 					<a href="/login">Log in</a>
@@ -26,10 +24,11 @@
 			{{/if}}
 		</header>
 	<main>
-		<p>This is the home page. Users can see it without logging in.</p>
-		{{#if authorised}}
-			<p><a href="/foo">Foo Bar</a></p>
-		{{/if}}
+		<p>This is the add stock levels page.</p>
+        <form>
+            <label></label>
+
+        </form>
 	</main>
 	</body>
 </html>
