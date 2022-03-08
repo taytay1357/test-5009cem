@@ -25,22 +25,22 @@
 		</header>
 	<main>
 		<p>This is the add stock levels page.</p>
-        <form method="post" action="/">
+        <form method="post" action="/add_stock" enctype="multipart/form-data">
             <label for="title">Book Name</label>
 			<input type="text" name="title" value="{{body.title}}"/>
 			<label for="author">Author</label>
 			<input type="text" name="author" value="{{body.author}}"/>
 			<label for="publication-date">Date</label>
-			<input type="date" name="publication-date" value="{{body.publication-date}}"/>
+			<input type="date" name="publication_date" value="{{body.publication-date}}"/>
 			<label for="isbn">ISBN-13</label>
 			<input type="number" name="isbn" value="{{body.isbn}}"/>
 			<label for="description">Description</label>
 			<input type="text" name="description" value="{{body.description}}"/>
 			<label for="thumbnail">Thumbnail Image</label>
-			<input type="file" name="thumbnail"/>
+			<input type="file" name="thumbnail" accept="image/*, .jpg, .jpeg, .png"/>
 			<label for="trade_price">Trade Price</label>
-			<input class="trade_price" type="range" min="1" max="100" name="trade_price" value="{{body.trade_value}}/>
-			<p name="trade_value">VALUE: <p class="trade_value" "></p></p>
+			<input class="trade_price" type="range" min="1" max="100" name="trade_price" value="{{body.trade_value}}"/>
+			<p name="trade_value">VALUE: <p class="trade_value"></p></p>
 			<input class="retail_price" type="range" min="1" max="100" name="retail_price" value="{{body.retail_value}}"/>
 			<p name="retail_value">VALUE: <p class="retail_value"></p></p>
 			<input class="quantity" type="range" min="1" max="20" name="quantity" value="{{body.quantity}}"/>

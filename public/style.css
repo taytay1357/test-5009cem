@@ -296,10 +296,6 @@ button#add:hover {
 	color: grey;
 }
 
-input[type="file"] {
-	display: none;
-}
-
 form img {
 	position: relative;
 	top: 1.5em;

@@ -70,12 +70,14 @@ router.get('/add_stock', async context => {
 })
 
 router.post('/add_stock', async context => {
-	const body = context.request.body({ type: 'form' })
-	const value = await body.value
-	const obj = Object.fromEntries(value)
-	console.log(obj)
-	await add_stock(obj)
-	context.response.redirect('/')
+	const body = context.request.body({ type: 'form-data' })
+	const value = await body.value.read()
+	const file = value.files[0]
+	let { originalName, filename } = file
+	await Deno.rename(filename, `${Deno.cwd()}/public/uploads/${originalName}`)
+	file.filename = `/uploads/${originalName}`
+	console.log(value)
+	await add_stock(value)
 })
 
 router.post('/login', async context => {
