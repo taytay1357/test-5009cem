@@ -29,11 +29,22 @@ router.get('/', async context => {
 		cart_data = await get_cart(authorised)
 	}
 	let counter = 0
-	for (let i=0; i<cart_data.length; i++){
+	let price = 0
+	let FK_isbn = 0
+	let record_isbn = 0
+	for (let i=0; i< cart_data.length; i++){
+		FK_isbn = cart_data[i].FK_isbn
+		for (let j=0; j< records.length; j++){
+			record_isbn = records[j].isbn
+			if (FK_isbn === record_isbn){
+				price = price + records[j].retail_price
+			} else {
+				continue
+			}
 		counter += 1
+		}
 	}
-	console.log(records, cart_data, counter)
-	const data = { authorised, admin, counter, sub_data: records }
+	const data = { authorised, admin, counter, price, sub_data: records }
 	const body = await handle.renderView('home', data)
 	context.response.body = body
 })
@@ -46,10 +57,7 @@ router.post('/', async context => {
 	obj.authorised = authorised
 	console.log(obj)
 	// now we need to update the cart with the new item
-	let status = await add_cart(obj)
-	if (status == false) {
-		console.log("ITEM ALREADY IN CART")
-	} 
+	await add_cart(obj)
 	context.response.redirect('/')
 })
 
