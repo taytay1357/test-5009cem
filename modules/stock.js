@@ -13,3 +13,10 @@ export async function add_stock(data){
     await db.query(sql)
     return true
 }
+
+export async function get_stock() {
+    let sql = `SELECT * FROM stock`
+    let records = await db.query(sql)
+    console.log(sql)
+    return records
+}

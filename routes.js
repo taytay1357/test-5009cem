@@ -7,7 +7,7 @@ import { Handlebars } from 'https://deno.land/x/handlebars/mod.ts'
 // import { parse } from 'https://deno.land/std/flags/mod.ts'
 
 import { login, register } from './modules/accounts.js'
-import { add_stock } from './modules/stock.js'
+import { add_stock, get_stock } from './modules/stock.js'
 
 const handle = new Handlebars({ defaultLayout: '' })
 
@@ -56,7 +56,9 @@ router.get('/logout', context => {
 router.get('/stock', async context => {
 	const authorised = context.cookies.get('authorised')
 	const admin = context.cookies.get('admin')
-	const data = { authorised, admin }
+    const records = await get_stock()
+	const data = { authorised, admin, sub_data: records }
+	console.log(data)
 	const body = await handle.renderView('stock', data)
 	context.response.body = body
 })

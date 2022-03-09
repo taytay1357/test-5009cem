@@ -24,12 +24,15 @@
 				{{/if}}
 			{{/if}}
 		</header>
-	<main>
-		<p>This is the stock levels page.</p>
-		{{#if authorised}}
-			<p><a href="/foo">Foo Bar</a></p>
-		{{/if}}
-
+	<main style="max-width: 100%; height: 100%;">
+		{{#each sub_data}}
+			<section class="stock_level">
+				<p>ISBN: {{this.isbn}}</p>
+				<p>NAME: {{this.book_title}}</p>
+				<p>QUANTITY: {{this.quantity}}</p>
+				<figure><img src="{{this.filepath}}" alt="Book Cover"/></figure>
+			</section>
+		{{/each}}
 	</main>
 	</body>
 </html>
