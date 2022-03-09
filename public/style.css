@@ -397,3 +397,16 @@ section.home_stock {
 	padding: 1vw;
 	border-bottom: 1px solid gray;
 }
+
+.home_form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.home_form > input{
+	padding: 0.5vw;
+}
+
+.home_form > input:hover {
+	cursor: pointer;
+}

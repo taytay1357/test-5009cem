@@ -8,6 +8,7 @@ import { Handlebars } from 'https://deno.land/x/handlebars/mod.ts'
 
 import { login, register } from './modules/accounts.js'
 import { add_stock, get_stock } from './modules/stock.js'
+import { add_cart, get_cart } from './modules/cart.js'
 
 const handle = new Handlebars({ defaultLayout: '' })
 
@@ -17,11 +18,35 @@ const router = new Router()
 router.get('/', async context => {
 	const authorised = context.cookies.get('authorised')
 	const admin = context.cookies.get('admin')
-	const records = await get_stock()
-	console.log(records)
-	const data = { authorised, admin, sub_data: records }
+	let records = await get_stock()
+	let cart_data = await get_cart(authorised)
+	if (authorised === undefined && admin === undefined){
+		records = []
+		cart_data = []
+	} 
+	let counter = 0
+	for (let i=0; i<cart_data.length; i++){
+		counter += 1
+	}
+	console.log(records, cart_data, counter)
+	const data = { authorised, admin, counter, sub_data: records }
 	const body = await handle.renderView('home', data)
 	context.response.body = body
+})
+
+router.post('/', async context => {
+	const body = context.request.body({ type: 'form' })
+	const authorised = context.cookies.get('authorised')
+	const value = await body.value
+	const obj = Object.fromEntries(value)
+	obj.authorised = authorised
+	console.log(obj)
+	// now we need to update the cart with the new innerHTML
+	let status = await add_cart(obj)
+	if (status == false) {
+		console.log("ITEM ALREADY IN CART")
+	} 
+	context.response.redirect('/')
 })
 
 router.get('/login', async context => {
