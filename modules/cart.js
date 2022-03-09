@@ -7,8 +7,8 @@ export async function add_cart(data) {
     const user_id = records[0].id
     sql = `SELECT FK_isbn FROM cart WHERE FK_isbn="${data.isbn}"`
     const check = await db.query(sql)
-    console.log(check)
-    if (check == []) {
+    console.log(sql, check)
+    if (check[0].FK_isbn == data.isbn) {
         return false
     } else {
         sql = `INSERT INTO cart(FK_user_id, FK_isbn) VALUES ("${user_id}", "${data.isbn}")`

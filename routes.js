@@ -45,7 +45,7 @@ router.post('/', async context => {
 	const obj = Object.fromEntries(value)
 	obj.authorised = authorised
 	console.log(obj)
-	// now we need to update the cart with the new innerHTML
+	// now we need to update the cart with the new item
 	let status = await add_cart(obj)
 	if (status == false) {
 		console.log("ITEM ALREADY IN CART")

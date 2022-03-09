@@ -17,6 +17,7 @@
 			{{#if authorised}}
 				<a href="/logout">Log out</a>
 				<a href="#" style="margin: 0;padding: 0;margin-right: 3vw;background-color: #ccc;border: none; height: 100%; display: flex; justify-content: center; align-items: center; "><figure><img src="./uploads/cart.png" alt="Cart Icon" style="width: 60px; height: 60px; margin-top: 0.5vw;"/></figure></a>
+				<p>{{this.counter}}</p>
 			{{else}}
 				{{#if admin}}
 					<a href="/logout">Log out</a>
