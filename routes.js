@@ -18,12 +18,16 @@ const router = new Router()
 router.get('/', async context => {
 	const authorised = context.cookies.get('authorised')
 	const admin = context.cookies.get('admin')
-	let records = await get_stock()
-	let cart_data = await get_cart(authorised)
-	if (authorised === undefined && admin === undefined){
+	console.log(admin)
+	let records = []
+	let cart_data = []
+	if (authorised === undefined){
 		records = []
 		cart_data = []
-	} 
+	} else if ( admin === undefined) {
+		records = await get_stock()
+		cart_data = await get_cart(authorised)
+	}
 	let counter = 0
 	for (let i=0; i<cart_data.length; i++){
 		counter += 1
