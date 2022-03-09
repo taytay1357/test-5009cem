@@ -17,7 +17,9 @@ const router = new Router()
 router.get('/', async context => {
 	const authorised = context.cookies.get('authorised')
 	const admin = context.cookies.get('admin')
-	const data = { authorised, admin }
+	const records = await get_stock()
+	console.log(records)
+	const data = { authorised, admin, sub_data: records }
 	const body = await handle.renderView('home', data)
 	context.response.body = body
 })

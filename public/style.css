@@ -369,3 +369,31 @@ section.stock_level {
 	width: 600px;
 	height: 600px;
 }
+
+section.home_stock {
+	width: 20%;
+	height: 10%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 1em;
+	margin-right: 1em;
+	padding: 1vw;
+	border: 3px solid black;
+}
+
+.home_stock > figure {
+	display: flex;
+	justify-content: center;
+}
+
+.home_stock > figure img {
+	width: 400px;
+	height: 400px;
+}
+
+.home_stock > p {
+	width: 80%;
+	padding: 1vw;
+	border-bottom: 1px solid gray;
+}
