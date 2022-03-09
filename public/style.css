@@ -340,3 +340,32 @@ form.add_stock {
 	height: 20%;
 	align: center;
 }
+
+section.stock_level {
+	width: 45%;
+	height: 20%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 1em;
+	margin-right: 1em;
+	padding: 1vw;
+	border: 5px solid black;
+}
+
+.stock_level > p {
+	width: 80%;
+	padding: 1vw;
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+.stock_level > figure {
+	display: flex;
+	justify-content: center;
+}
+
+.stock_level > figure img {
+	width: 600px;
+	height: 600px;
+}
