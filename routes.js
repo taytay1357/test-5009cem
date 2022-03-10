@@ -89,8 +89,17 @@ router.get('/cart', async context => {
 			}
 		}
 	}
-	let cart_info = await cart_info(selected_records)
-	console.log(selected_records)
+	for ( let m=0; m<selected_records.length; m++){
+		for (let n=0; n<records.length; n++){
+			if (selected_records[m].isbn === records[n].isbn){
+				selected_records[m].book_title = records[n].book_title
+				selected_records[m].filepath = records[n].filepath
+				selected_records[m].retail_price = records[n].retail_price
+			} else {
+				continue
+			}
+		}
+	}
 	const data = { authorised, record_data: selected_records }
 	const body = await handle.renderView('cart', data)
 	context.response.body = body
