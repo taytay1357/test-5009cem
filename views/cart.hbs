@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Home Page</title>
+		<meta name="description" content="form to add new books">
+		<meta name="author" content="Mark Tyers">
+		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+		<link href="/style.css" type="text/css" rel="stylesheet" />
+		<script type="module" src="/main.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Home</h1>
+			{{#if authorised}}
+				<a href="/logout">Log out</a>
+				<a href="/">Home</a>
+			{{else}}
+				{{#if admin}}
+					<a href="/logout">Log out</a>
+					<a href="/stock">Stock Levels</a>
+				{{else}}
+					<a href="/login">Log in</a>
+				{{/if}}
+			{{/if}}
+		</header>
+        <main> 
+            <p>HERE ARE ALL THE ITEMS YOU HAVE ADDED!</p>
+            {{#each record_data}}
+                <figure><img src="{{this.filepath}}" alt="book cover"/></figure>
+                <p>{{this.book_title}}</p>
+                <p>£{{this.retail_price}}.00</p>
+                <p>QUANTITY: </p>
+                <form method="post" action="/cart">
+                    <input type="submit" value="DELETE"/>
+                    <input type="hidden" value="{{this.isbn}}"
+                </form>
+                
+            {{/each}}
+        </main>
+    </body>
+</html>

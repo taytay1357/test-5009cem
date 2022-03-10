@@ -61,6 +61,30 @@ router.post('/', async context => {
 	context.response.redirect('/')
 })
 
+router.get('/cart', async context => {
+	const authorised = context.cookies.get('authorised')
+	const cart_data = await get_cart(authorised)
+	const records = await get_stock()
+	console.log(cart_data)
+	console.log(records)
+	const selected_records = []
+	let current_isbn
+	for( let i=0; i<cart_data.length; i++){
+		current_isbn = cart_data[i].FK_isbn
+		for (let j=0; j<records.length; j++){
+			if (current_isbn === records[j].isbn){
+				selected_records.push(records[j])
+			} else {
+				continue
+			}
+		}
+	}
+	console.log(selected_records)
+	const data = { authorised, record_data: selected_records }
+	const body = await handle.renderView('cart', data)
+	context.response.body = body
+})
+
 router.get('/login', async context => {
 	const body = await handle.renderView('login')
 	context.response.body = body
