@@ -3,16 +3,16 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Home Page</title>
+		<title>Your Cart</title>
 		<meta name="description" content="form to add new books">
 		<meta name="author" content="Mark Tyers">
 		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
 		<link href="/style.css" type="text/css" rel="stylesheet" />
 		<script type="module" src="/main.js"></script>
 	</head>
-	<body>
+	<body style="overflow: hidden;">
 		<header>
-			<h1>Home</h1>
+			<h1>Your Cart</h1>
 			{{#if authorised}}
 				<a href="/logout">Log out</a>
 				<a href="/">Home</a>
@@ -25,19 +25,25 @@
 				{{/if}}
 			{{/if}}
 		</header>
-        <main> 
-            <p>HERE ARE ALL THE ITEMS YOU HAVE ADDED!</p>
-            {{#each record_data}}
-                <figure><img src="{{this.filepath}}" alt="book cover"/></figure>
-                <p>{{this.book_title}}</p>
-                <p>£{{this.retail_price}}.00</p>
-                <p>QUANTITY: </p>
-                <form method="post" action="/cart">
-                    <input type="submit" value="DELETE"/>
-                    <input type="hidden" value="{{this.isbn}}"
-                </form>
-                
+        <main style="max-width: 100%;margin: auto; margin-top: 2em;padding: 2em; background-color: lightgray;height: 50em; overflow-y: scroll; overflow-x: hidden;"> 
+                <p>HERE ARE ALL THE ITEMS YOU HAVE ADDED!</p>
+                <p>TOTAL: £{{this.price}}.00</p>
+				{{#each record_data}}
+                <section class="cart">
+                    <figure><img src="{{this.filepath}}" alt="book cover"/></figure>
+                    <p>{{this.book_title}}</p>
+                    <p>UNIT PRICE: £{{this.retail_price}}.00</p>
+                    <p>QUANTITY: {{this.quantity}}</p>
+                    <form method="post" action="/cart">
+                        <input type="submit" value="DELETE"/>
+                        <input type="hidden" value="{{this.isbn}}" name="record"/>
+                    </form>
+                </section>
             {{/each}}
+			<form method="post" action="/">
+					<input type="submit" value="CANCEL CART"/>
+					<input type="hidden" value="*" name="record"/>
+			</form>
         </main>
     </body>
 </html>

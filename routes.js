@@ -8,7 +8,7 @@ import { Handlebars } from 'https://deno.land/x/handlebars/mod.ts'
 
 import { login, register } from './modules/accounts.js'
 import { add_stock, get_stock } from './modules/stock.js'
-import { add_cart, get_cart } from './modules/cart.js'
+import { add_cart, get_cart, delete_cart } from './modules/cart.js'
 
 const handle = new Handlebars({ defaultLayout: '' })
 
@@ -58,7 +58,7 @@ router.post('/', async context => {
 	console.log(obj)
 	// now we need to update the cart with the new item
 	await add_cart(obj)
-	context.response.redirect('/')
+	context.response.redirect('/cart')
 })
 
 router.get('/cart', async context => {
@@ -100,10 +100,41 @@ router.get('/cart', async context => {
 			}
 		}
 	}
-	const data = { authorised, record_data: selected_records }
+	// WORK OUT THE PRICE
+	let price = 0
+	let temp
+	for (let x=0; x<selected_records.length; x++){
+		temp = selected_records[x].retail_price * selected_records[x].quantity
+		price = price + temp
+	}
+	const data = { authorised, price, record_data: selected_records }
 	const body = await handle.renderView('cart', data)
 	context.response.body = body
 })
+
+router.post('/cart', async context => {
+	const authorised = context.cookies.get('authorised')
+	const body = context.request.body({ type: 'form' })
+	const value = await body.value
+	const obj = Object.fromEntries(value)
+	console.log(obj)
+	obj.authorised = authorised
+	await delete_cart(obj)
+	if (obj.record === "*"){
+		context.response.redirect('/random')
+	} else {
+		context.response.redirect('cart')
+	}
+	
+})
+
+
+router.get('/random', async context => {
+	const body = await handle.renderView('cart')
+	context.response.body = body
+	context.response.redirect('/')
+}) 
+
 
 router.get('/login', async context => {
 	const body = await handle.renderView('login')
