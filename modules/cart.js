@@ -13,12 +13,16 @@ export async function add_cart(data) {
 }
 
 export async function get_cart(user){
+    if (user === undefined){
+        return false
+    } else {
     let sql = `SELECT id FROM accounts WHERE user="${user}"`
     const records = await db.query(sql)
-    console.log(records)
+    console.log(user)
     sql = `SELECT * FROM cart WHERE FK_user_id="${records[0].id}"`
     const actual = await db.query(sql)
     return actual
+    }
 }
 
 export async function delete_cart(data){

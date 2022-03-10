@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS accounts (
 );
 
 CREATE TABLE IF NOT EXISTS stock (
-  isbn MEDIUMINT PRIMARY KEY,
+  isbn BIGINT PRIMARY KEY,
   book_title VARCHAR(50) NOT NULL,
   author VARCHAR(75) NOT NULL,
   publication_date DATE NOT NULL,
@@ -28,9 +28,15 @@ CREATE TABLE IF NOT EXISTS stock (
 CREATE TABLE IF NOT EXISTS cart (
   cart_id MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   FK_user_id MEDIUMINT UNSIGNED,
-  FK_isbn MEDIUMINT,
+  FK_isbn BIGINT,
   FOREIGN KEY (FK_user_id) REFERENCES accounts(id),
   FOREIGN KEY (FK_isbn) REFERENCES stock(isbn)
 );
 INSERT INTO accounts(user, pass)
-	VALUES("doej", "$2b$10$gL33obKAFUT5DK3pEbh72OIHztsWBniBBh.PdeKOrF1yr5KFAsdZO");
+	VALUES("user1", "p455w0rd");
+
+INSERT INTO accounts(user, pass)
+	VALUES("user2", "p455w0rd");
+
+INSERT INTO accounts(user, pass)
+	VALUES("admin", "p455w0rd");
