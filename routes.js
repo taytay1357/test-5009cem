@@ -67,18 +67,29 @@ router.get('/cart', async context => {
 	const records = await get_stock()
 	console.log(cart_data)
 	console.log(records)
+	let sub_data
 	const selected_records = []
-	let current_isbn
-	for( let i=0; i<cart_data.length; i++){
-		current_isbn = cart_data[i].FK_isbn
-		for (let j=0; j<records.length; j++){
-			if (current_isbn === records[j].isbn){
-				selected_records.push(records[j])
-			} else {
-				continue
+	let current
+	for (let i=0; i<cart_data.length; i++){
+		if (selected_records.length == 0){
+			selected_records.push({ isbn: cart_data[0].FK_isbn, quantity: 1})
+		} else {
+			for (let j=0; j<selected_records.length; j++){
+				if ( cart_data[i].FK_isbn == selected_records[j].isbn){
+					selected_records[j].quantity += 1
+					break
+				} else {
+					if(j == selected_records.length-1){
+						selected_records.push({ isbn: cart_data[i].FK_isbn, quantity: 1})
+						break
+					} else {
+						continue
+					}
+				}
 			}
 		}
 	}
+	let cart_info = await cart_info(selected_records)
 	console.log(selected_records)
 	const data = { authorised, record_data: selected_records }
 	const body = await handle.renderView('cart', data)
