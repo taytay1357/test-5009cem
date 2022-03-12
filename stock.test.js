@@ -1,4 +1,4 @@
-import { getStock } from './stock.js'
+import { get_stock} from './modules/stock.js'
 
 // getStock function gets all the stock that exists in the stock table.
 
