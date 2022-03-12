@@ -1,0 +1,70 @@
+{
+  "scriptId": "83",
+  "url": "file:///home/codio/workspace/modules/test/accounts.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 1097,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "login",
+      "ranges": [
+        {
+          "startOffset": 343,
+          "endOffset": 835,
+          "count": 3
+        },
+        {
+          "startOffset": 605,
+          "endOffset": 810,
+          "count": 2
+        },
+        {
+          "startOffset": 685,
+          "endOffset": 783,
+          "count": 1
+        },
+        {
+          "startOffset": 783,
+          "endOffset": 810,
+          "count": 0
+        },
+        {
+          "startOffset": 816,
+          "endOffset": 834,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "clear_insert",
+      "ranges": [
+        {
+          "startOffset": 844,
+          "endOffset": 918,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "register",
+      "ranges": [
+        {
+          "startOffset": 927,
+          "endOffset": 1097,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

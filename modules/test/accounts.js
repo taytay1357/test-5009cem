@@ -14,14 +14,14 @@ export function login(data) {
             } else {
                 return false
             }
-            break
         }
+        continue
     }
     return false
 }
 
 export function clear_insert () {
-    db['INSERT'] = []
+    db['INSERT'].accounts = 0
     return true
 }
 

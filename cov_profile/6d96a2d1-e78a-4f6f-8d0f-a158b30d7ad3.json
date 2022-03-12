@@ -1,0 +1,17 @@
+{
+  "scriptId": "41",
+  "url": "deno:ext/timers/01_timers.js",
+  "functions": [
+    {
+      "functionName": "handleTimerMacrotask",
+      "ranges": [
+        {
+          "startOffset": 8124,
+          "endOffset": 8321,
+          "count": 5
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}
