@@ -1,0 +1,99 @@
+{
+  "scriptId": "83",
+  "url": "file:///home/codio/workspace/modules/test/accounts.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 1341,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "login",
+      "ranges": [
+        {
+          "startOffset": 198,
+          "endOffset": 758,
+          "count": 3
+        },
+        {
+          "startOffset": 390,
+          "endOffset": 477,
+          "count": 0
+        },
+        {
+          "startOffset": 543,
+          "endOffset": 615,
+          "count": 0
+        },
+        {
+          "startOffset": 654,
+          "endOffset": 739,
+          "count": 2
+        },
+        {
+          "startOffset": 698,
+          "endOffset": 733,
+          "count": 1
+        },
+        {
+          "startOffset": 739,
+          "endOffset": 757,
+          "count": 2
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "register",
+      "ranges": [
+        {
+          "startOffset": 768,
+          "endOffset": 1341,
+          "count": 10
+        },
+        {
+          "startOffset": 976,
+          "endOffset": 998,
+          "count": 8
+        },
+        {
+          "startOffset": 999,
+          "endOffset": 1086,
+          "count": 4
+        },
+        {
+          "startOffset": 1086,
+          "endOffset": 1120,
+          "count": 6
+        },
+        {
+          "startOffset": 1120,
+          "endOffset": 1150,
+          "count": 2
+        },
+        {
+          "startOffset": 1152,
+          "endOffset": 1224,
+          "count": 4
+        },
+        {
+          "startOffset": 1224,
+          "endOffset": 1260,
+          "count": 2
+        },
+        {
+          "startOffset": 1260,
+          "endOffset": 1340,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

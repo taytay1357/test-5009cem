@@ -31,17 +31,17 @@
             <td class="headerValue">cov_profile.lcov</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">30</td>
-            <td class="headerCovTableEntry">33</td>
-            <td class="headerCovTableEntryHi">90.9 %</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntry">38</td>
+            <td class="headerCovTableEntryMed">81.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-03-12 16:57:31</td>
+            <td class="headerValue">2022-03-15 12:05:54</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
@@ -60,39 +60,44 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span><span class="lineCov">          5 : import { db } from '/home/codio/workspace/modules/db.js'</span></a>
-<span class="lineNum">       2 </span><span class="lineCov">          5 : // function that selects all of the accounts records from db.js and checks if the username exists and if so pulls the password from that username and then checks it against the one entered.</span>
-<a name="3"><span class="lineNum">       3 </span><span class="lineCov">          5 :     // let sql = `SELECT count(id) AS count FROM accounts WHERE user=&quot;${data.username}&quot;;</span></a>
-<span class="lineNum">       4 </span><span class="lineCov">          5 : export function login(data) {</span>
-<span class="lineNum">       5 </span><span class="lineCov">         20 :     const records = db['SELECT'].accounts //get all accounts record from the db.js</span>
-<span class="lineNum">       6 </span><span class="lineCov">         20 :     console.log(records)</span>
-<span class="lineNum">       7 </span><span class="lineCov">         20 :     console.log(data)</span>
-<span class="lineNum">       8 </span><span class="lineCov">         20 :     let password        </span>
-<span class="lineNum">       9 </span><span class="lineCov">         20 :     for (let i=0; i&lt;records.length; i++){</span>
-<span class="lineNum">      10 </span><span class="lineCov">         20 :         if (data.user === records[i].user){</span>
-<span class="lineNum">      11 </span><span class="lineCov">         30 :             password = records[i].pass</span>
-<span class="lineNum">      12 </span><span class="lineCov">         30 :             if (data.pass === password){</span>
-<span class="lineNum">      13 </span><span class="lineCov">         35 :                 return data.user</span>
-<span class="lineNum">      14 </span><span class="lineCov">         35 :             } else {</span>
-<span class="lineNum">      15 </span><span class="lineCov">         35 :                 return false</span>
-<span class="lineNum">      16 </span><span class="lineNoCov">          0 :             }</span>
-<span class="lineNum">      17 </span><span class="lineNoCov">          0 :         }</span>
-<span class="lineNum">      18 </span><span class="lineNoCov">          0 :         continue</span>
-<span class="lineNum">      19 </span><span class="lineCov">         23 :     }</span>
-<span class="lineNum">      20 </span><span class="lineCov">         20 :     return false</span>
-<span class="lineNum">      21 </span><span class="lineCov">         12 : }</span>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          9 : </span></a>
-<span class="lineNum">      23 </span><span class="lineCov">          6 : export function clear_insert () {</span>
-<span class="lineNum">      24 </span><span class="lineCov">         10 :     db['INSERT'].accounts = 0</span>
-<span class="lineNum">      25 </span><span class="lineCov">          8 :     return true</span>
-<span class="lineNum">      26 </span><span class="lineCov">          7 : }</span>
-<a name="27"><span class="lineNum">      27 </span><span class="lineCov">          7 : </span></a>
-<span class="lineNum">      28 </span><span class="lineCov">          7 : export function register(data){</span>
-<span class="lineNum">      29 </span><span class="lineCov">         10 :     // function to register a user into db.js using INSERT</span>
-<span class="lineNum">      30 </span><span class="lineCov">         10 :     db['INSERT'].accounts = data</span>
-<span class="lineNum">      31 </span><span class="lineCov">         10 :     console.log(db['INSERT'], data)</span>
-<span class="lineNum">      32 </span><span class="lineCov">          6 :     return true</span>
-<span class="lineNum">      33 </span><span class="lineCov">          2 : }</span>
+<a name="1"><span class="lineNum">       1 </span><span class="lineCov">          1 : </span></a>
+<a name="2"><span class="lineNum">       2 </span><span class="lineCov">          1 : // function that selects all of the accounts records from db.js and checks if the username exists and if so pulls the password from that username and then checks it against the one entered.</span></a>
+<span class="lineNum">       3 </span><span class="lineCov">          1 : export function login(...data) {</span>
+<span class="lineNum">       4 </span><span class="lineCov">          4 :     const argument_length = data.length</span>
+<span class="lineNum">       5 </span><span class="lineCov">          4 :     const test = data[0]</span>
+<span class="lineNum">       6 </span><span class="lineCov">          4 :     const records = data[1]</span>
+<span class="lineNum">       7 </span><span class="lineCov">          4 :     console.log(data)</span>
+<span class="lineNum">       8 </span><span class="lineNoCov">          0 :     if (argument_length &lt; 2 || argument_length &gt; 2){</span>
+<span class="lineNum">       9 </span><span class="lineNoCov">          0 :         throw new Error(`function doesn't receive correct number of arguments`)</span>
+<span class="lineNum">      10 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">      11 </span><span class="lineNoCov">          0 :     if( typeof test !== 'object' || typeof records !== 'object') {</span>
+<span class="lineNum">      12 </span><span class="lineNoCov">          0 :         throw new Error(`${test} or ${records} are not objects`)</span>
+<span class="lineNum">      13 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">      14 </span><span class="lineCov">          4 :     if (test.user === records[0].user){</span>
+<span class="lineNum">      15 </span><span class="lineCov">          6 :         if (test.pass === records[0].pass){</span>
+<span class="lineNum">      16 </span><span class="lineCov">          7 :             return true</span>
+<span class="lineNum">      17 </span><span class="lineCov">          6 :         }</span>
+<span class="lineNum">      18 </span><span class="lineCov">          4 :     }</span>
+<span class="lineNum">      19 </span><span class="lineCov">          6 :     return false</span>
+<span class="lineNum">      20 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">      21 </span><span class="lineCov">          1 : </span>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          1 : </span></a>
+<span class="lineNum">      23 </span><span class="lineCov">          1 : export function register(...data){</span>
+<span class="lineNum">      24 </span><span class="lineCov">         11 :     // function to register a user into db.js using INSERT</span>
+<span class="lineNum">      25 </span><span class="lineCov">         11 :     const argument_length = data.length</span>
+<span class="lineNum">      26 </span><span class="lineCov">         11 :     const test = data[0]</span>
+<span class="lineNum">      27 </span><span class="lineCov">         11 :     const records = data[1]</span>
+<span class="lineNum">      28 </span><span class="lineCov">         11 :     if (argument_length &lt; 2 || argument_length &gt; 2){</span>
+<span class="lineNum">      29 </span><span class="lineCov">         15 :         throw new Error(`function doesn't receive correct number of arguments`)</span>
+<span class="lineNum">      30 </span><span class="lineCov">         11 :     }</span>
+<span class="lineNum">      31 </span><span class="lineCov">         11 :     if( typeof test !== 'object' || typeof records !== 'object') {</span>
+<span class="lineNum">      32 </span><span class="lineCov">         15 :         throw new Error(`${test} or ${records} are not objects`)</span>
+<span class="lineNum">      33 </span><span class="lineCov">         11 :     }</span>
+<span class="lineNum">      34 </span><span class="lineCov">         11 :     if (test.id === records[0].id) { //i.e. id already in the database</span>
+<span class="lineNum">      35 </span><span class="lineCov">         12 :         return false</span>
+<span class="lineNum">      36 </span><span class="lineCov">         12 :     } </span>
+<span class="lineNum">      37 </span><span class="lineCov">         12 :     return true</span>
+<span class="lineNum">      38 </span><span class="lineNoCov">          0 : }</span>
 </pre>
       </td>
     </tr>

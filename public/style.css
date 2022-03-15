@@ -330,7 +330,7 @@ form.add_stock {
 }
 
 .add_stock > input[type="range"]{
-	width: 100%;
+	width: 50%;
 }
 
 .add_stock > input[type="file"]{

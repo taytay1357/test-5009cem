@@ -31,7 +31,7 @@
 		{{#if authorised}}
 			{{#each sub_data}}
 			<section class="home_stock">
-				<p>NAME: {{this.book_title}}</p>
+				<p>{{this.book_title}}</p>
 				<figure><img src="{{this.filepath}}" alt="Book Cover"/></figure>
                 <form class="home_form" method="post" action="/">
 					<input type="hidden" name="isbn" value="{{this.isbn}}"/>
