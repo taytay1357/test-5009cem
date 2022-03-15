@@ -1,13 +1,13 @@
 {
   "scriptId": "81",
-  "url": "file:///home/codio/workspace/3e92d65a-a905-4098-a8ab-7215624b42c4$deno$test.js",
+  "url": "file:///home/codio/workspace/f67f2b72-5df5-4b3c-b762-3bcf0a626fdb$deno$test.js",
   "functions": [
     {
       "functionName": "",
       "ranges": [
         {
           "startOffset": 0,
-          "endOffset": 53,
+          "endOffset": 56,
           "count": 1
         }
       ],
