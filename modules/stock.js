@@ -1,8 +1,8 @@
 import { db } from './db.js'
 
-export async function add_stock(data){
+export async function addStock(data){
     let sql = `SELECT isbn FROM stock WHERE isbn="${data.fields.isbn}"`
-    let status = await db.query(sql)
+    const status = await db.query(sql)
     Number(data.fields.isbn)
     if (status.length > 0) {
         if ( data.fields.isbn != status[0].isbn){
@@ -19,9 +19,9 @@ export async function add_stock(data){
     return true
 }
 
-export async function get_stock() {
-    let sql = `SELECT * FROM stock`
-    let records = await db.query(sql)
+export async function getStock() {
+    const sql = `SELECT * FROM stock`
+    const records = await db.query(sql)
     console.log(sql)
     return records
 }

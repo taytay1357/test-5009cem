@@ -7,8 +7,8 @@ import { Handlebars } from 'https://deno.land/x/handlebars/mod.ts'
 // import { parse } from 'https://deno.land/std/flags/mod.ts'
 
 import { login, register } from './modules/accounts.js'
-import { add_stock, get_stock } from './modules/stock.js'
-import { add_cart, get_cart, delete_cart } from './modules/cart.js'
+import { addStock, getStock } from './modules/stock.js'
+import { addCart, getCart, deleteCart } from './modules/cart.js'
 
 const handle = new Handlebars({ defaultLayout: '' })
 
@@ -25,8 +25,8 @@ router.get('/', async context => {
 		records = []
 		cart_data = []
 	} else if ( admin === undefined) {
-		records = await get_stock()
-		cart_data = await get_cart(authorised)
+		records = await getStock()
+		cart_data = await getCart(authorised)
 	}
 	let counter = 0
 	let price = 0
@@ -57,14 +57,14 @@ router.post('/', async context => {
 	obj.authorised = authorised
 	console.log(obj)
 	// now we need to update the cart with the new item
-	await add_cart(obj)
+	await addCart(obj)
 	context.response.redirect('/cart')
 })
 
 router.get('/cart', async context => {
 	const authorised = context.cookies.get('authorised')
-	const cart_data = await get_cart(authorised)
-	const records = await get_stock()
+	const cart_data = await getCart(authorised)
+	const records = await getStock()
 	console.log(cart_data)
 	console.log(records)
 	let sub_data
@@ -119,7 +119,7 @@ router.post('/cart', async context => {
 	const obj = Object.fromEntries(value)
 	console.log(obj)
 	obj.authorised = authorised
-	await delete_cart(obj)
+	await deleteCart(obj)
 	if (obj.record === "*"){
 		context.response.redirect('/random')
 	} else {
@@ -170,7 +170,7 @@ router.get('/logout', context => {
 router.get('/stock', async context => {
 	const authorised = context.cookies.get('authorised')
 	const admin = context.cookies.get('admin')
-    const records = await get_stock()
+    const records = await getStock()
 	const data = { authorised, admin, sub_data: records }
 	console.log(data)
 	const body = await handle.renderView('stock', data)
@@ -193,7 +193,7 @@ router.post('/add_stock', async context => {
 	await Deno.rename(filename, `${Deno.cwd()}/public/uploads/${originalName}`)
 	file.filename = `/uploads/${originalName}`
 	console.log(value)
-	await add_stock(value)
+	await addStock(value)
 	context.response.redirect('/stock')
 })
 
