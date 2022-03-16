@@ -8,7 +8,7 @@ Deno.test({
     name: 'username exists but password does not match one of the database',
     fn: async () => {
         // ARRANGE - define an object to pass and import the module
-        let data = {id: 7, username: "user1", password: "dawdawdad" }
+        let data = {id: 7, username: "testdummy", password: "dawdawdad" }
         // ACT - call the module with the object
         try {
             let outcome = await login(data)
@@ -16,7 +16,7 @@ Deno.test({
             console.log(outcome)
         } catch(err) {
             console.log(err.message)
-            assertEquals(err.message, "invalid password for account user1")  // ASSERT
+            assertEquals(err.message, "invalid password for account testdummy")  // ASSERT
         }
     
     },
@@ -48,7 +48,7 @@ Deno.test({
     name: 'username exists in database and password matches',
     fn: async () => {
         // ARRANGE 
-        const obj2 = {id: 1, username: "user1", password: "p455w0rd"}
+        const obj2 = {id: 1, username: "testdummy", password: "p455w0rd"}
         // ACT
         const outcome = await login(obj2)
         // ASSERT

@@ -40,10 +40,8 @@ Deno.test({
         const outcome = await addStock(data)
         const outcomes = outcome.split(" ")
         const assertionData = outcomes[0]
-        if (assertionData == "INSERT") {
-            sql = `DELETE FROM stock WHERE isbn="${data.fields.isbn}"`
-            await db.query(sql)
-        }
+        sql = `DELETE FROM stock WHERE isbn="${data.fields.isbn}"`
+        await db.query(sql)
         // ASSERT
         assertEquals(assertionData, "INSERT", 'there is a record of this isbn')
     },
