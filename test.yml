@@ -1,0 +1,13 @@
+# .github/workflows/test.yml
+
+name: Basic
+
+on: [push, pull_request]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Set up Actions
+            uses: actions/checkout@v2
+          - name: Set up Deno
+            uses: denoland/setup-deno@v1.14.0
