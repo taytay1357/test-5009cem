@@ -1,0 +1,61 @@
+{
+  "scriptId": "9",
+  "url": "deno:ext/url/00_url.js",
+  "functions": [
+    {
+      "functionName": "opUrlParse",
+      "ranges": [
+        {
+          "startOffset": 1164,
+          "endOffset": 1274,
+          "count": 5
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "_urlParts",
+      "ranges": [
+        {
+          "startOffset": 1277,
+          "endOffset": 1799,
+          "count": 5
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "<instance_members_initializer>",
+      "ranges": [
+        {
+          "startOffset": 8061,
+          "endOffset": 8092,
+          "count": 5
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "URL",
+      "ranges": [
+        {
+          "startOffset": 8170,
+          "endOffset": 8580,
+          "count": 5
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "toString",
+      "ranges": [
+        {
+          "startOffset": 15628,
+          "endOffset": 15715,
+          "count": 5
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

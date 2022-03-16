@@ -1,0 +1,17 @@
+{
+  "scriptId": "138",
+  "url": "https://deno.land/x/god_crypto@v0.2.0/mod.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 288,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

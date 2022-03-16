@@ -1,0 +1,22 @@
+{
+  "scriptId": "47",
+  "url": "deno:ext/net/04_net_unstable.js",
+  "functions": [
+    {
+      "functionName": "connect",
+      "ranges": [
+        {
+          "startOffset": 701,
+          "endOffset": 956,
+          "count": 1
+        },
+        {
+          "startOffset": 782,
+          "endOffset": 904,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "scriptId": "45",
+  "url": "deno:ext/net/01_net.js",
+  "functions": [
+    {
+      "functionName": "read",
+      "ranges": [
+        {
+          "startOffset": 315,
+          "endOffset": 530,
+          "count": 82
+        },
+        {
+          "startOffset": 392,
+          "endOffset": 415,
+          "count": 0
+        },
+        {
+          "startOffset": 511,
+          "endOffset": 517,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "write",
+      "ranges": [
+        {
+          "startOffset": 534,
+          "endOffset": 635,
+          "count": 11
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "opConnect",
+      "ranges": [
+        {
+          "startOffset": 897,
+          "endOffset": 972,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "<instance_members_initializer>",
+      "ranges": [
+        {
+          "startOffset": 1384,
+          "endOffset": 1439,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Conn",
+      "ranges": [
+        {
+          "startOffset": 1445,
+          "endOffset": 1587,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "get rid",
+      "ranges": [
+        {
+          "startOffset": 1593,
+          "endOffset": 1634,
+          "count": 93
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "write",
+      "ranges": [
+        {
+          "startOffset": 1760,
+          "endOffset": 1809,
+          "count": 11
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "read",
+      "ranges": [
+        {
+          "startOffset": 1815,
+          "endOffset": 1862,
+          "count": 82
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "connect",
+      "ranges": [
+        {
+          "startOffset": 4162,
+          "endOffset": 4489,
+          "count": 1
+        },
+        {
+          "startOffset": 4248,
+          "endOffset": 4293,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

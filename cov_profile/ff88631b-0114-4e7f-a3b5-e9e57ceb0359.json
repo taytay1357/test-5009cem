@@ -1,0 +1,17 @@
+{
+  "scriptId": "113",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/constant/mysql_types.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 5352,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

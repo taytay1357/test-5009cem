@@ -1,0 +1,399 @@
+{
+  "scriptId": "115",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/buffer.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 14428,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "encode",
+      "ranges": [
+        {
+          "startOffset": 77,
+          "endOffset": 137,
+          "count": 14
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "decode",
+      "ranges": [
+        {
+          "startOffset": 145,
+          "endOffset": 205,
+          "count": 111
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "<instance_members_initializer>",
+      "ranges": [
+        {
+          "startOffset": 238,
+          "endOffset": 257,
+          "count": 82
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "BufferReader",
+      "ranges": [
+        {
+          "startOffset": 263,
+          "endOffset": 320,
+          "count": 82
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "get finished",
+      "ranges": [
+        {
+          "startOffset": 325,
+          "endOffset": 394,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "skip",
+      "ranges": [
+        {
+          "startOffset": 399,
+          "endOffset": 462,
+          "count": 32
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readBuffer",
+      "ranges": [
+        {
+          "startOffset": 467,
+          "endOffset": 606,
+          "count": 2
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readUints",
+      "ranges": [
+        {
+          "startOffset": 611,
+          "endOffset": 779,
+          "count": 87
+        },
+        {
+          "startOffset": 687,
+          "endOffset": 753,
+          "count": 245
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readUint8",
+      "ranges": [
+        {
+          "startOffset": 784,
+          "endOffset": 843,
+          "count": 194
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readUint16",
+      "ranges": [
+        {
+          "startOffset": 848,
+          "endOffset": 902,
+          "count": 31
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readUint32",
+      "ranges": [
+        {
+          "startOffset": 907,
+          "endOffset": 961,
+          "count": 15
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readUint64",
+      "ranges": [
+        {
+          "startOffset": 966,
+          "endOffset": 1020,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "readNullTerminatedString",
+      "ranges": [
+        {
+          "startOffset": 1025,
+          "endOffset": 1294,
+          "count": 2
+        },
+        {
+          "startOffset": 1145,
+          "endOffset": 1170,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readString",
+      "ranges": [
+        {
+          "startOffset": 1299,
+          "endOffset": 1440,
+          "count": 109
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readEncodedLen",
+      "ranges": [
+        {
+          "startOffset": 1445,
+          "endOffset": 1893,
+          "count": 121
+        },
+        {
+          "startOffset": 1566,
+          "endOffset": 1892,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "readLenCodeString",
+      "ranges": [
+        {
+          "startOffset": 1898,
+          "endOffset": 2053,
+          "count": 109
+        },
+        {
+          "startOffset": 1998,
+          "endOffset": 2010,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "<instance_members_initializer>",
+      "ranges": [
+        {
+          "startOffset": 2088,
+          "endOffset": 2107,
+          "count": 23
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "BufferWriter",
+      "ranges": [
+        {
+          "startOffset": 2113,
+          "endOffset": 2170,
+          "count": 23
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "get wroteData",
+      "ranges": [
+        {
+          "startOffset": 2175,
+          "endOffset": 2245,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "get length",
+      "ranges": [
+        {
+          "startOffset": 2250,
+          "endOffset": 2295,
+          "count": 22
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "get capacity",
+      "ranges": [
+        {
+          "startOffset": 2300,
+          "endOffset": 2368,
+          "count": 25
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "skip",
+      "ranges": [
+        {
+          "startOffset": 2373,
+          "endOffset": 2436,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "writeBuffer",
+      "ranges": [
+        {
+          "startOffset": 2441,
+          "endOffset": 2675,
+          "count": 24
+        },
+        {
+          "startOffset": 2506,
+          "endOffset": 2570,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "write",
+      "ranges": [
+        {
+          "startOffset": 2680,
+          "endOffset": 2760,
+          "count": 26
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "writeInt16LE",
+      "ranges": [
+        {
+          "startOffset": 2765,
+          "endOffset": 2786,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "writeIntLE",
+      "ranges": [
+        {
+          "startOffset": 2791,
+          "endOffset": 2905,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "writeUint16",
+      "ranges": [
+        {
+          "startOffset": 2910,
+          "endOffset": 2974,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "writeUint32",
+      "ranges": [
+        {
+          "startOffset": 2979,
+          "endOffset": 3043,
+          "count": 2
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "writeUint64",
+      "ranges": [
+        {
+          "startOffset": 3048,
+          "endOffset": 3112,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "writeUints",
+      "ranges": [
+        {
+          "startOffset": 3117,
+          "endOffset": 3279,
+          "count": 13
+        },
+        {
+          "startOffset": 3178,
+          "endOffset": 3252,
+          "count": 41
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "writeNullTerminatedString",
+      "ranges": [
+        {
+          "startOffset": 3284,
+          "endOffset": 3372,
+          "count": 3
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "writeString",
+      "ranges": [
+        {
+          "startOffset": 3377,
+          "endOffset": 3527,
+          "count": 3
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

@@ -17,7 +17,6 @@ const salt = await genSalt(saltRounds);
  * @returns {string} the username for the valid account
  */
 export async function login(data) {
-  console.log(data);
   let sql = 
     `SELECT count(id) AS count FROM accounts WHERE user="${data.username}";`;
   let records = await db.query(sql);
@@ -43,6 +42,7 @@ export async function register(data) {
   const password = await hash(data.password, salt);
   let sql = `SELECT * FROM accounts WHERE user="${data.username}"`
   const records = await db.query(sql)
+  console.log(records)
   if (records.length > 0) {
     return false
   } else {

@@ -1,0 +1,85 @@
+{
+  "scriptId": "127",
+  "url": "https://deno.land/x/bytes_formater@v1.4.0/format.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 5110,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "format",
+      "ranges": [
+        {
+          "startOffset": 42,
+          "endOffset": 1311,
+          "count": 11
+        },
+        {
+          "startOffset": 485,
+          "endOffset": 1193,
+          "count": 49
+        },
+        {
+          "startOffset": 795,
+          "endOffset": 862,
+          "count": 9
+        },
+        {
+          "startOffset": 1100,
+          "endOffset": 1165,
+          "count": 9
+        },
+        {
+          "startOffset": 1193,
+          "endOffset": 1310,
+          "count": 49
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 698,
+          "endOffset": 757,
+          "count": 698
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 909,
+          "endOffset": 1062,
+          "count": 698
+        },
+        {
+          "startOffset": 964,
+          "endOffset": 977,
+          "count": 623
+        },
+        {
+          "startOffset": 994,
+          "endOffset": 1028,
+          "count": 609
+        },
+        {
+          "startOffset": 1045,
+          "endOffset": 1050,
+          "count": 89
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}
