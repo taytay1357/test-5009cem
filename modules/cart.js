@@ -38,7 +38,7 @@ export async function deleteCart(data) {
     console.log(sql);
   } else {
     sql =
-      `DELETE FROM cart WHERE FK_isbn="${data.record}" AND FK_user_id="${user_id}"`;
+      `DELETE FROM cart WHERE FK_isbn="${data.record}" AND FK_user_id="${userId}"`;
     await db.query(sql);
     console.log(sql);
   }
