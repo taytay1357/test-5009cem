@@ -1,6 +1,5 @@
 {
-    "imports" : {
-        "./modules/": "./modules/test/"
-
-    }
+  "imports": {
+    "./modules/": "./modules/test/"
+  }
 }
