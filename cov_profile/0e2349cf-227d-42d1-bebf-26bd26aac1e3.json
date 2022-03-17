@@ -1,0 +1,61 @@
+{
+  "scriptId": "7",
+  "url": "deno:ext/console/01_colors.js",
+  "functions": [
+    {
+      "functionName": "code",
+      "ranges": [
+        {
+          "startOffset": 272,
+          "endOffset": 436,
+          "count": 28
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "run",
+      "ranges": [
+        {
+          "startOffset": 440,
+          "endOffset": 575,
+          "count": 28
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "yellow",
+      "ranges": [
+        {
+          "startOffset": 705,
+          "endOffset": 766,
+          "count": 9
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "green",
+      "ranges": [
+        {
+          "startOffset": 895,
+          "endOffset": 955,
+          "count": 19
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "stripColor",
+      "ranges": [
+        {
+          "startOffset": 1567,
+          "endOffset": 1661,
+          "count": 13
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

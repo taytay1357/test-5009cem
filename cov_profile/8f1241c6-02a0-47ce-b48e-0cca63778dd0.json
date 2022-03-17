@@ -1,0 +1,98 @@
+{
+  "scriptId": "82",
+  "url": "file:///home/codio/workspace/modules/stock.test.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 7582,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 291,
+          "endOffset": 1562,
+          "count": 1
+        },
+        {
+          "startOffset": 1103,
+          "endOffset": 1217,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 1737,
+          "endOffset": 3008,
+          "count": 1
+        },
+        {
+          "startOffset": 2549,
+          "endOffset": 2663,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 3183,
+          "endOffset": 4454,
+          "count": 1
+        },
+        {
+          "startOffset": 3995,
+          "endOffset": 4109,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 4648,
+          "endOffset": 5725,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 5917,
+          "endOffset": 6968,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 7166,
+          "endOffset": 7500,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

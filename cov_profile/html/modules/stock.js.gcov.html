@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-03-16 15:56:01</td>
+            <td class="headerValue">2022-03-17 19:11:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -60,35 +60,35 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span><span class="lineCov">          4 : import { db } from &quot;./db.js&quot;;</span></a>
-<a name="2"><span class="lineNum">       2 </span><span class="lineCov">          4 : </span></a>
-<span class="lineNum">       3 </span><span class="lineCov">          4 : export async function addStock(data) {</span>
-<span class="lineNum">       4 </span><span class="lineCov">         12 :   console.log(data)</span>
-<span class="lineNum">       5 </span><span class="lineCov">         12 :   let sql = `SELECT isbn FROM stock WHERE isbn=&quot;${data.fields.isbn}&quot;`;</span>
-<span class="lineNum">       6 </span><span class="lineCov">         12 :   const status = await db.query(sql);</span>
-<span class="lineNum">       7 </span><span class="lineCov">         12 :   Number(data.fields.isbn);</span>
-<span class="lineNum">       8 </span><span class="lineCov">         12 :   if (status.length &gt; 0) {</span>
-<span class="lineNum">       9 </span><span class="lineCov">         16 :       sql =</span>
-<span class="lineNum">      10 </span><span class="lineCov">         16 :         `UPDATE stock SET book_title = &quot;${data.fields.title}&quot;, author = &quot;${data.fields.author}&quot;, publication_date = &quot;${data.fields.publication_date}&quot;, filepath = &quot;${</span>
-<span class="lineNum">      11 </span><span class="lineCov">         16 :           data.files[0].filename</span>
-<span class="lineNum">      12 </span><span class="lineCov">         16 :         }&quot;, description = &quot;${data.fields.description}&quot;, trade_price = &quot;${data.fields.trade_price}&quot;, retail_price = &quot;${data.fields.retail_price}&quot;, quantity=&quot;${data.fields.quantity}&quot; WHERE isbn = &quot;${data.fields.isbn}&quot;;`;</span>
-<span class="lineNum">      13 </span><span class="lineCov">         16 :   } else {</span>
-<span class="lineNum">      14 </span><span class="lineCov">         16 :     sql =</span>
-<span class="lineNum">      15 </span><span class="lineCov">         16 :       `INSERT INTO stock(isbn, book_title, author, publication_date, filepath, description, trade_price, retail_price, quantity) VALUES (&quot;${data.fields.isbn}&quot;, &quot;${data.fields.title}&quot;, &quot;${data.fields.author}&quot;, &quot;${data.fields.publication_date}&quot;, &quot;${</span>
-<span class="lineNum">      16 </span><span class="lineCov">         16 :         data.files[0].filename</span>
-<span class="lineNum">      17 </span><span class="lineCov">         16 :       }&quot;,&quot;${data.fields.description}&quot;, &quot;${data.fields.trade_price}&quot;, &quot;${data.fields.retail_price}&quot;, &quot;${data.fields.quantity}&quot;)`;</span>
-<span class="lineNum">      18 </span><span class="lineCov">         12 :   }</span>
-<span class="lineNum">      19 </span><span class="lineCov">         12 :   console.log(sql)</span>
-<span class="lineNum">      20 </span><span class="lineCov">         12 :   await db.query(sql);</span>
-<span class="lineNum">      21 </span><span class="lineCov">         12 :   return sql;</span>
-<span class="lineNum">      22 </span><span class="lineCov">          4 : }</span>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          4 : </span></a>
-<span class="lineNum">      24 </span><span class="lineCov">          4 : export async function getStock() {</span>
-<span class="lineNum">      25 </span><span class="lineCov">          8 :   const sql = `SELECT * FROM stock`;</span>
-<span class="lineNum">      26 </span><span class="lineCov">          8 :   const records = await db.query(sql);</span>
-<span class="lineNum">      27 </span><span class="lineCov">          8 :   console.log(sql);</span>
-<span class="lineNum">      28 </span><span class="lineCov">          8 :   return records;</span>
-<span class="lineNum">      29 </span><span class="lineCov">          4 : }</span>
+<a name="1"><span class="lineNum">       1 </span><span class="lineCov">          1 : import { db } from &quot;./db.js&quot;;</span></a>
+<a name="2"><span class="lineNum">       2 </span><span class="lineCov">          1 : </span></a>
+<span class="lineNum">       3 </span><span class="lineCov">          1 : export async function addStock(data) {</span>
+<span class="lineNum">       4 </span><span class="lineCov">          6 :   console.log(data)</span>
+<span class="lineNum">       5 </span><span class="lineCov">          6 :   let sql = `SELECT isbn FROM stock WHERE isbn=&quot;${data.fields.isbn}&quot;`;</span>
+<span class="lineNum">       6 </span><span class="lineCov">          6 :   const status = await db.query(sql);</span>
+<span class="lineNum">       7 </span><span class="lineCov">          6 :   Number(data.fields.isbn);</span>
+<span class="lineNum">       8 </span><span class="lineCov">          6 :   if (status.length &gt; 0) {</span>
+<span class="lineNum">       9 </span><span class="lineCov">          8 :       sql =</span>
+<span class="lineNum">      10 </span><span class="lineCov">          8 :         `UPDATE stock SET book_title = &quot;${data.fields.title}&quot;, author = &quot;${data.fields.author}&quot;, publication_date = &quot;${data.fields.publication_date}&quot;, filepath = &quot;${</span>
+<span class="lineNum">      11 </span><span class="lineCov">          8 :           data.files[0].filename</span>
+<span class="lineNum">      12 </span><span class="lineCov">          8 :         }&quot;, description = &quot;${data.fields.description}&quot;, trade_price = &quot;${data.fields.trade_price}&quot;, retail_price = &quot;${data.fields.retail_price}&quot;, quantity=&quot;${data.fields.quantity}&quot; WHERE isbn = &quot;${data.fields.isbn}&quot;;`;</span>
+<span class="lineNum">      13 </span><span class="lineCov">          6 :   } else {</span>
+<span class="lineNum">      14 </span><span class="lineCov">          9 :     sql =</span>
+<span class="lineNum">      15 </span><span class="lineCov">          9 :       `INSERT INTO stock(isbn, book_title, author, publication_date, filepath, description, trade_price, retail_price, quantity) VALUES (&quot;${data.fields.isbn}&quot;, &quot;${data.fields.title}&quot;, &quot;${data.fields.author}&quot;, &quot;${data.fields.publication_date}&quot;, &quot;${</span>
+<span class="lineNum">      16 </span><span class="lineCov">          9 :         data.files[0].filename</span>
+<span class="lineNum">      17 </span><span class="lineCov">          9 :       }&quot;,&quot;${data.fields.description}&quot;, &quot;${data.fields.trade_price}&quot;, &quot;${data.fields.retail_price}&quot;, &quot;${data.fields.quantity}&quot;)`;</span>
+<span class="lineNum">      18 </span><span class="lineCov">          6 :   }</span>
+<span class="lineNum">      19 </span><span class="lineCov">          6 :   console.log(sql)</span>
+<span class="lineNum">      20 </span><span class="lineCov">          6 :   await db.query(sql);</span>
+<span class="lineNum">      21 </span><span class="lineCov">          6 :   return sql;</span>
+<span class="lineNum">      22 </span><span class="lineCov">          1 : }</span>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          1 : </span></a>
+<span class="lineNum">      24 </span><span class="lineCov">          1 : export async function getStock() {</span>
+<span class="lineNum">      25 </span><span class="lineCov">          2 :   const sql = `SELECT * FROM stock`;</span>
+<span class="lineNum">      26 </span><span class="lineCov">          2 :   const records = await db.query(sql);</span>
+<span class="lineNum">      27 </span><span class="lineCov">          2 :   console.log(sql);</span>
+<span class="lineNum">      28 </span><span class="lineCov">          2 :   return records;</span>
+<span class="lineNum">      29 </span><span class="lineCov">          1 : }</span>
 </pre>
       </td>
     </tr>

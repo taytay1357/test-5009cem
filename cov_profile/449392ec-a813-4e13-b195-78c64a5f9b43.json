@@ -1,0 +1,75 @@
+{
+  "scriptId": "83",
+  "url": "file:///home/codio/workspace/modules/cart.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 1482,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "addCart",
+      "ranges": [
+        {
+          "startOffset": 38,
+          "endOffset": 478,
+          "count": 6
+        },
+        {
+          "startOffset": 204,
+          "endOffset": 474,
+          "count": 3
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getCart",
+      "ranges": [
+        {
+          "startOffset": 487,
+          "endOffset": 932,
+          "count": 4
+        },
+        {
+          "startOffset": 544,
+          "endOffset": 567,
+          "count": 1
+        },
+        {
+          "startOffset": 567,
+          "endOffset": 930,
+          "count": 3
+        },
+        {
+          "startOffset": 894,
+          "endOffset": 926,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "deleteCart",
+      "ranges": [
+        {
+          "startOffset": 941,
+          "endOffset": 1481,
+          "count": 6
+        },
+        {
+          "startOffset": 1183,
+          "endOffset": 1479,
+          "count": 3
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "scriptId": "154",
+  "url": "https://deno.land/std@0.125.0/hash/_wasm/wasm.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 207693,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getUint8Memory0",
+      "ranges": [
+        {
+          "startOffset": 230,
+          "endOffset": 463,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getStringFromWasm0",
+      "ranges": [
+        {
+          "startOffset": 465,
+          "endOffset": 585,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "addHeapObject",
+      "ranges": [
+        {
+          "startOffset": 701,
+          "endOffset": 877,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getObject",
+      "ranges": [
+        {
+          "startOffset": 879,
+          "endOffset": 926,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "dropObject",
+      "ranges": [
+        {
+          "startOffset": 928,
+          "endOffset": 1024,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "takeObject",
+      "ranges": [
+        {
+          "startOffset": 1026,
+          "endOffset": 1117,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "encodeString",
+      "ranges": [
+        {
+          "startOffset": 1217,
+          "endOffset": 1291,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "passStringToWasm0",
+      "ranges": [
+        {
+          "startOffset": 1294,
+          "endOffset": 2152,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "create_hash",
+      "ranges": [
+        {
+          "startOffset": 2219,
+          "endOffset": 2466,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "_assertClass",
+      "ranges": [
+        {
+          "startOffset": 2468,
+          "endOffset": 2634,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "passArray8ToWasm0",
+      "ranges": [
+        {
+          "startOffset": 2636,
+          "endOffset": 2802,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "update_hash",
+      "ranges": [
+        {
+          "startOffset": 2871,
+          "endOffset": 3073,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getInt32Memory0",
+      "ranges": [
+        {
+          "startOffset": 3108,
+          "endOffset": 3341,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getArrayU8FromWasm0",
+      "ranges": [
+        {
+          "startOffset": 3343,
+          "endOffset": 3446,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "digest_hash",
+      "ranges": [
+        {
+          "startOffset": 3512,
+          "endOffset": 3949,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 4005,
+          "endOffset": 4045,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "__wrap",
+      "ranges": [
+        {
+          "startOffset": 4087,
+          "endOffset": 4244,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "__destroy_into_raw",
+      "ranges": [
+        {
+          "startOffset": 4248,
+          "endOffset": 4377,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "free",
+      "ranges": [
+        {
+          "startOffset": 4381,
+          "endOffset": 4471,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "__wbindgen_string_new",
+      "ranges": [
+        {
+          "startOffset": 4550,
+          "endOffset": 4660,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "__wbindgen_throw",
+      "ranges": [
+        {
+          "startOffset": 4684,
+          "endOffset": 4768,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "__wbindgen_rethrow",
+      "ranges": [
+        {
+          "startOffset": 4794,
+          "endOffset": 4847,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}

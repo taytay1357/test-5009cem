@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-03-16 15:56:01</td>
+            <td class="headerValue">2022-03-17 19:11:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -60,61 +60,61 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span><span class="lineCov">          4 : /* accounts.js */</span></a>
-<span class="lineNum">       2 </span><span class="lineCov">          4 : </span>
-<span class="lineNum">       3 </span><span class="lineCov">          4 : import { compare,</span>
-<span class="lineNum">       4 </span><span class="lineCov">          4 :   genSalt,</span>
-<span class="lineNum">       5 </span><span class="lineCov">          4 :   hash,</span>
-<span class="lineNum">       6 </span><span class="lineCov">          4 : } from &quot;https://deno.land/x/bcrypt@v0.2.4/mod.ts&quot;;</span>
-<span class="lineNum">       7 </span><span class="lineCov">          4 : </span>
-<span class="lineNum">       8 </span><span class="lineCov">          4 : import { db } from &quot;./db.js&quot;;</span>
-<span class="lineNum">       9 </span><span class="lineCov">          4 : </span>
-<span class="lineNum">      10 </span><span class="lineCov">          4 : const saltRounds = 10;</span>
-<span class="lineNum">      11 </span><span class="lineCov">          4 : const salt = await genSalt(saltRounds);</span>
-<span class="lineNum">      12 </span><span class="lineCov">          4 : </span>
-<span class="lineNum">      13 </span><span class="lineCov">          4 : /**</span>
-<span class="lineNum">      14 </span><span class="lineCov">          4 :  * Checks user credentials.</span>
-<span class="lineNum">      15 </span><span class="lineCov">          4 :  * @param {string} username</span>
-<span class="lineNum">      16 </span><span class="lineCov">          4 :  * @param {string} password</span>
-<span class="lineNum">      17 </span><span class="lineCov">          4 :  * @returns {string} the username for the valid account</span>
-<a name="18"><span class="lineNum">      18 </span><span class="lineCov">          4 :  */</span></a>
-<span class="lineNum">      19 </span><span class="lineCov">          4 : export async function login(data) {</span>
-<span class="lineNum">      20 </span><span class="lineCov">         16 :   let sql = </span>
-<span class="lineNum">      21 </span><span class="lineCov">         16 :     `SELECT count(id) AS count FROM accounts WHERE user=&quot;${data.username}&quot;;`;</span>
-<span class="lineNum">      22 </span><span class="lineCov">         16 :   let records = await db.query(sql);</span>
-<span class="lineNum">      23 </span><span class="lineCov">         16 :   if (!records[0].count) {</span>
-<span class="lineNum">      24 </span><span class="lineCov">         20 :     throw new Error(`username &quot;${data.username}&quot; not found`);</span>
-<span class="lineNum">      25 </span><span class="lineCov">         16 :   }</span>
-<span class="lineNum">      26 </span><span class="lineCov">         24 :   sql = `SELECT pass FROM accounts WHERE user = &quot;${data.username}&quot;;`;</span>
-<span class="lineNum">      27 </span><span class="lineCov">         24 :   records = await db.query(sql);</span>
-<span class="lineNum">      28 </span><span class="lineCov">         24 :   const valid = await compare(data.password, records[0].pass);</span>
-<span class="lineNum">      29 </span><span class="lineCov">         16 :   if (valid === false) {</span>
-<span class="lineNum">      30 </span><span class="lineCov">         20 :     throw new Error(`invalid password for account ${data.username}`);</span>
-<span class="lineNum">      31 </span><span class="lineCov">         20 :   }</span>
-<span class="lineNum">      32 </span><span class="lineCov">         20 :   return data.username;</span>
-<span class="lineNum">      33 </span><span class="lineCov">          4 : }</span>
-<span class="lineNum">      34 </span><span class="lineCov">          4 : </span>
-<span class="lineNum">      35 </span><span class="lineCov">          4 : /**</span>
-<span class="lineNum">      36 </span><span class="lineCov">          4 :  * Adds x and y.</span>
-<span class="lineNum">      37 </span><span class="lineCov">          4 :  * @param {number} x</span>
-<span class="lineNum">      38 </span><span class="lineCov">          4 :  * @param {number} y</span>
-<span class="lineNum">      39 </span><span class="lineCov">          4 :  * @returns {number} Sum of x and y</span>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          4 :  */</span></a>
-<span class="lineNum">      41 </span><span class="lineCov">          4 : export async function register(data) {</span>
-<span class="lineNum">      42 </span><span class="lineCov">         12 :   const password = await hash(data.password, salt);</span>
-<span class="lineNum">      43 </span><span class="lineCov">         12 :   let sql = `SELECT * FROM accounts WHERE user=&quot;${data.username}&quot;`</span>
-<span class="lineNum">      44 </span><span class="lineCov">         12 :   const records = await db.query(sql)</span>
-<span class="lineNum">      45 </span><span class="lineCov">         12 :   console.log(records)</span>
-<span class="lineNum">      46 </span><span class="lineCov">         12 :   if (records.length &gt; 0) {</span>
-<span class="lineNum">      47 </span><span class="lineCov">         16 :     return false</span>
-<span class="lineNum">      48 </span><span class="lineCov">         16 :   } else {</span>
-<span class="lineNum">      49 </span><span class="lineCov">         16 :     sql =</span>
-<span class="lineNum">      50 </span><span class="lineCov">         16 :       `INSERT INTO accounts(user, pass) VALUES(&quot;${data.username}&quot;, &quot;${password}&quot;)`;</span>
-<span class="lineNum">      51 </span><span class="lineCov">         16 :     console.log(sql);</span>
-<span class="lineNum">      52 </span><span class="lineCov">         16 :     await db.query(sql);</span>
-<span class="lineNum">      53 </span><span class="lineCov">         16 :     return true;</span>
-<span class="lineNum">      54 </span><span class="lineCov">         12 :   }</span>
-<span class="lineNum">      55 </span><span class="lineCov">          4 : }</span>
+<a name="1"><span class="lineNum">       1 </span><span class="lineCov">          1 : /* accounts.js */</span></a>
+<span class="lineNum">       2 </span><span class="lineCov">          1 : </span>
+<span class="lineNum">       3 </span><span class="lineCov">          1 : import { compare,</span>
+<span class="lineNum">       4 </span><span class="lineCov">          1 :   genSalt,</span>
+<span class="lineNum">       5 </span><span class="lineCov">          1 :   hash,</span>
+<span class="lineNum">       6 </span><span class="lineCov">          1 : } from &quot;https://deno.land/x/bcrypt@v0.2.4/mod.ts&quot;;</span>
+<span class="lineNum">       7 </span><span class="lineCov">          1 : </span>
+<span class="lineNum">       8 </span><span class="lineCov">          1 : import { db } from &quot;./db.js&quot;;</span>
+<span class="lineNum">       9 </span><span class="lineCov">          1 : </span>
+<span class="lineNum">      10 </span><span class="lineCov">          1 : const saltRounds = 10;</span>
+<span class="lineNum">      11 </span><span class="lineCov">          1 : const salt = await genSalt(saltRounds);</span>
+<span class="lineNum">      12 </span><span class="lineCov">          1 : </span>
+<span class="lineNum">      13 </span><span class="lineCov">          1 : /**</span>
+<span class="lineNum">      14 </span><span class="lineCov">          1 :  * Checks user credentials.</span>
+<span class="lineNum">      15 </span><span class="lineCov">          1 :  * @param {string} username</span>
+<span class="lineNum">      16 </span><span class="lineCov">          1 :  * @param {string} password</span>
+<span class="lineNum">      17 </span><span class="lineCov">          1 :  * @returns {string} the username for the valid account</span>
+<a name="18"><span class="lineNum">      18 </span><span class="lineCov">          1 :  */</span></a>
+<span class="lineNum">      19 </span><span class="lineCov">          1 : export async function login(data) {</span>
+<span class="lineNum">      20 </span><span class="lineCov">         10 :   let sql = </span>
+<span class="lineNum">      21 </span><span class="lineCov">         10 :     `SELECT count(id) AS count FROM accounts WHERE user=&quot;${data.username}&quot;;`;</span>
+<span class="lineNum">      22 </span><span class="lineCov">         10 :   let records = await db.query(sql);</span>
+<span class="lineNum">      23 </span><span class="lineCov">         10 :   if (!records[0].count) {</span>
+<span class="lineNum">      24 </span><span class="lineCov">         13 :     throw new Error(`username &quot;${data.username}&quot; not found`);</span>
+<span class="lineNum">      25 </span><span class="lineCov">         10 :   }</span>
+<span class="lineNum">      26 </span><span class="lineCov">         16 :   sql = `SELECT pass FROM accounts WHERE user = &quot;${data.username}&quot;;`;</span>
+<span class="lineNum">      27 </span><span class="lineCov">         16 :   records = await db.query(sql);</span>
+<span class="lineNum">      28 </span><span class="lineCov">         16 :   const valid = await compare(data.password, records[0].pass);</span>
+<span class="lineNum">      29 </span><span class="lineCov">         10 :   if (valid === false) {</span>
+<span class="lineNum">      30 </span><span class="lineCov">         13 :     throw new Error(`invalid password for account ${data.username}`);</span>
+<span class="lineNum">      31 </span><span class="lineCov">         13 :   }</span>
+<span class="lineNum">      32 </span><span class="lineCov">         13 :   return data.username;</span>
+<span class="lineNum">      33 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">      34 </span><span class="lineCov">          1 : </span>
+<span class="lineNum">      35 </span><span class="lineCov">          1 : /**</span>
+<span class="lineNum">      36 </span><span class="lineCov">          1 :  * Adds x and y.</span>
+<span class="lineNum">      37 </span><span class="lineCov">          1 :  * @param {number} x</span>
+<span class="lineNum">      38 </span><span class="lineCov">          1 :  * @param {number} y</span>
+<span class="lineNum">      39 </span><span class="lineCov">          1 :  * @returns {number} Sum of x and y</span>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          1 :  */</span></a>
+<span class="lineNum">      41 </span><span class="lineCov">          1 : export async function register(data) {</span>
+<span class="lineNum">      42 </span><span class="lineCov">          7 :   const password = await hash(data.password, salt);</span>
+<span class="lineNum">      43 </span><span class="lineCov">          7 :   let sql = `SELECT * FROM accounts WHERE user=&quot;${data.username}&quot;`</span>
+<span class="lineNum">      44 </span><span class="lineCov">          7 :   const records = await db.query(sql)</span>
+<span class="lineNum">      45 </span><span class="lineCov">          7 :   console.log(records)</span>
+<span class="lineNum">      46 </span><span class="lineCov">          7 :   if (records.length &gt; 0) {</span>
+<span class="lineNum">      47 </span><span class="lineCov">         10 :     return false</span>
+<span class="lineNum">      48 </span><span class="lineCov">         10 :   } else {</span>
+<span class="lineNum">      49 </span><span class="lineCov">         10 :     sql =</span>
+<span class="lineNum">      50 </span><span class="lineCov">         10 :       `INSERT INTO accounts(user, pass) VALUES(&quot;${data.username}&quot;, &quot;${password}&quot;)`;</span>
+<span class="lineNum">      51 </span><span class="lineCov">         10 :     console.log(sql);</span>
+<span class="lineNum">      52 </span><span class="lineCov">         10 :     await db.query(sql);</span>
+<span class="lineNum">      53 </span><span class="lineCov">         10 :     return true;</span>
+<span class="lineNum">      54 </span><span class="lineCov">          7 :   }</span>
+<span class="lineNum">      55 </span><span class="lineCov">          1 : }</span>
 </pre>
       </td>
     </tr>

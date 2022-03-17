@@ -1,0 +1,72 @@
+{
+  "scriptId": "94",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/constant/errors.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 2095,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "ConnnectionError",
+      "ranges": [
+        {
+          "startOffset": 50,
+          "endOffset": 94,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "WriteError",
+      "ranges": [
+        {
+          "startOffset": 152,
+          "endOffset": 196,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "ReadError",
+      "ranges": [
+        {
+          "startOffset": 253,
+          "endOffset": 297,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "ResponseTimeoutError",
+      "ranges": [
+        {
+          "startOffset": 365,
+          "endOffset": 409,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "ProtocolError",
+      "ranges": [
+        {
+          "startOffset": 470,
+          "endOffset": 514,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}

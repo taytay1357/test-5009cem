@@ -1,0 +1,17 @@
+{
+  "scriptId": "81",
+  "url": "file:///home/codio/workspace/cd747a98-fde1-44b9-b567-b39c81cb1682$deno$test.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 60,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

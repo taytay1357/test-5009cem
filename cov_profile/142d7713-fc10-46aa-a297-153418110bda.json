@@ -1,0 +1,44 @@
+{
+  "scriptId": "91",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/logger.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 4156,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "debug",
+      "ranges": [
+        {
+          "startOffset": 118,
+          "endOffset": 183,
+          "count": 119
+        },
+        {
+          "startOffset": 158,
+          "endOffset": 181,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "configLogger",
+      "ranges": [
+        {
+          "startOffset": 191,
+          "endOffset": 997,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}
