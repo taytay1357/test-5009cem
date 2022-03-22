@@ -43,8 +43,8 @@ Deno.test("user enters a correct username/password", async (test) => {
   });
   await assertEquals(
     heading,
-    "Foo Bar",
-    "top level heading not Foo bar so incorrect credentials",
+    "Home",
+    "top level heading not Home so incorrect credentials",
   );
   await browser.close();
 });
