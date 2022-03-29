@@ -1,0 +1,71 @@
+{
+  "scriptId": "114",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/auth.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 4959,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "hash",
+      "ranges": [
+        {
+          "startOffset": 112,
+          "endOffset": 218,
+          "count": 3
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "mysqlNativePassword",
+      "ranges": [
+        {
+          "startOffset": 219,
+          "endOffset": 565,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "cachingSha2Password",
+      "ranges": [
+        {
+          "startOffset": 566,
+          "endOffset": 816,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "auth",
+      "ranges": [
+        {
+          "startOffset": 832,
+          "endOffset": 1168,
+          "count": 1
+        },
+        {
+          "startOffset": 1012,
+          "endOffset": 1097,
+          "count": 0
+        },
+        {
+          "startOffset": 1106,
+          "endOffset": 1160,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

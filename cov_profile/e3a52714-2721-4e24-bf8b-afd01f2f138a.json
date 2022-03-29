@@ -1,0 +1,22 @@
+{
+  "scriptId": "61",
+  "url": "deno:runtime/js/30_os.js",
+  "functions": [
+    {
+      "functionName": "getEnv",
+      "ranges": [
+        {
+          "startOffset": 1270,
+          "endOffset": 1352,
+          "count": 1
+        },
+        {
+          "startOffset": 1335,
+          "endOffset": 1347,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

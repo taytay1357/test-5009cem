@@ -1,17 +1,17 @@
 #!/bin/sh
 
-//before the user commits the system should check the code its commiting i.e. perform tests, linters and formatters
+#before the user commits the system should check the code its commiting i.e. perform tests, linters and formatters
 
 //CODE QUALITY CHECKS
 
 deno lint --unstable
 echo "Linter is running"
 
-//want to format the code so its ready for a push to the remote repo
+#want to format the code so its ready for a push to the remote repo
 deno fmt --unstable
 echo "Formatter check is running"
 
-//CODE TESTS
+#CODE TESTS
 
-./new.sh //predefined shell script that runs my unit tests and generates a coverage report
+./new.sh #predefined shell script that runs my unit tests and generates a coverage report
 echo "Unit tests running"

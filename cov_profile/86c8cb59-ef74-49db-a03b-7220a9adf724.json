@@ -1,0 +1,212 @@
+{
+  "scriptId": "82",
+  "url": "file:///home/codio/workspace/modules/accounts.test.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 8913,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 302,
+          "endOffset": 772,
+          "count": 1
+        },
+        {
+          "startOffset": 545,
+          "endOffset": 632,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 948,
+          "endOffset": 1421,
+          "count": 1
+        },
+        {
+          "startOffset": 1193,
+          "endOffset": 1280,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 1597,
+          "endOffset": 2069,
+          "count": 1
+        },
+        {
+          "startOffset": 1841,
+          "endOffset": 1928,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 2219,
+          "endOffset": 2625,
+          "count": 1
+        },
+        {
+          "startOffset": 2470,
+          "endOffset": 2529,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 2775,
+          "endOffset": 3186,
+          "count": 1
+        },
+        {
+          "startOffset": 3028,
+          "endOffset": 3087,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 3336,
+          "endOffset": 3755,
+          "count": 1
+        },
+        {
+          "startOffset": 3595,
+          "endOffset": 3654,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 3916,
+          "endOffset": 4200,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 4361,
+          "endOffset": 4646,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 4807,
+          "endOffset": 5092,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 5276,
+          "endOffset": 5825,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 5988,
+          "endOffset": 6538,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 6701,
+          "endOffset": 7251,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 7416,
+          "endOffset": 7778,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 7943,
+          "endOffset": 8306,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "fn",
+      "ranges": [
+        {
+          "startOffset": 8471,
+          "endOffset": 8834,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

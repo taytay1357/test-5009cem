@@ -1,0 +1,50 @@
+{
+  "scriptId": "157",
+  "url": "https://deno.land/x/god_crypto@v0.2.0/src/primitives.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 5114,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "i2osp",
+      "ranges": [
+        {
+          "startOffset": 71,
+          "endOffset": 297,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "os2ip",
+      "ranges": [
+        {
+          "startOffset": 305,
+          "endOffset": 414,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "mgf1",
+      "ranges": [
+        {
+          "startOffset": 422,
+          "endOffset": 935,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}
