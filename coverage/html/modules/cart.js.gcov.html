@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-03-29 09:42:19</td>
+            <td class="headerValue">2022-03-29 09:49:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -60,83 +60,83 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span><span class="lineCov">         10 : import { db } from &quot;./db.js&quot;;</span></a>
-<span class="lineNum">       2 </span><span class="lineCov">         10 : </span>
-<a name="3"><span class="lineNum">       3 </span><span class="lineCov">         10 : /**</span></a>
-<span class="lineNum">       4 </span><span class="lineCov">         10 :  * Adds a record to users cart.</span>
-<span class="lineNum">       5 </span><span class="lineCov">         34 :  * @param {number} cart_id</span>
-<span class="lineNum">       6 </span><span class="lineCov">         34 :  * @param {number} FK_user_id</span>
-<span class="lineNum">       7 </span><span class="lineCov">         34 :  * @param {number} FK_isbn</span>
-<span class="lineNum">       8 </span><span class="lineCov">         34 :  * @returns {boolean} boolean to determine whether add was successful</span>
-<span class="lineNum">       9 </span><span class="lineCov">         46 :  */</span>
-<span class="lineNum">      10 </span><span class="lineCov">         46 : </span>
-<span class="lineNum">      11 </span><span class="lineCov">         46 : export async function addCart(data) {</span>
-<span class="lineNum">      12 </span><span class="lineCov">         82 :   let sql = `SELECT id FROM accounts WHERE user=&quot;${data.authorised}&quot;`;</span>
-<span class="lineNum">      13 </span><span class="lineCov">         82 :   const records = await db.query(sql);</span>
-<span class="lineNum">      14 </span><span class="lineCov">         82 :   if (records.length &gt; 0) {</span>
-<span class="lineNum">      15 </span><span class="lineCov">        100 :     Number(data.isbn);</span>
-<span class="lineNum">      16 </span><span class="lineCov">        100 :     const userId = records[0].id;</span>
-<a name="17"><span class="lineNum">      17 </span><span class="lineCov">         64 :     console.log(&quot;hi&quot;);</span></a>
-<span class="lineNum">      18 </span><span class="lineCov">         64 :     sql =</span>
-<span class="lineNum">      19 </span><span class="lineCov">         80 :       `INSERT INTO cart(FK_user_id, FK_isbn) VALUES (&quot;${userId}&quot;, &quot;${data.isbn}&quot;)`;</span>
-<span class="lineNum">      20 </span><span class="lineCov">         92 :     await db.query(sql);</span>
-<span class="lineNum">      21 </span><span class="lineCov">         92 :     console.log(sql);</span>
-<span class="lineNum">      22 </span><span class="lineCov">         92 :     return true;</span>
-<span class="lineNum">      23 </span><span class="lineCov">         92 :   } else {</span>
-<span class="lineNum">      24 </span><span class="lineCov">         92 :     return false;</span>
-<span class="lineNum">      25 </span><span class="lineCov">         74 :   }</span>
-<span class="lineNum">      26 </span><span class="lineCov">         38 : }</span>
-<span class="lineNum">      27 </span><span class="lineCov">         38 : </span>
-<span class="lineNum">      28 </span><span class="lineCov">         38 : /**</span>
-<span class="lineNum">      29 </span><span class="lineCov">         38 :  * Gets users cart.</span>
-<span class="lineNum">      30 </span><span class="lineCov">         38 :  * @param {string} username</span>
-<span class="lineNum">      31 </span><span class="lineCov">         38 :  * @returns {boolean} boolean to determine whether there are records for that username</span>
-<span class="lineNum">      32 </span><span class="lineCov">         38 :  */</span>
-<span class="lineNum">      33 </span><span class="lineCov">         38 : </span>
-<span class="lineNum">      34 </span><span class="lineCov">         38 : export async function getCart(user) {</span>
-<span class="lineNum">      35 </span><span class="lineCov">         62 :   if (user === undefined) {</span>
+<a name="1"><span class="lineNum">       1 </span><span class="lineCov">         11 : import { db } from &quot;./db.js&quot;;</span></a>
+<span class="lineNum">       2 </span><span class="lineCov">         11 : </span>
+<a name="3"><span class="lineNum">       3 </span><span class="lineCov">         11 : /**</span></a>
+<span class="lineNum">       4 </span><span class="lineCov">         11 :  * Adds a record to users cart.</span>
+<span class="lineNum">       5 </span><span class="lineCov">         35 :  * @param {number} cart_id</span>
+<span class="lineNum">       6 </span><span class="lineCov">         35 :  * @param {number} FK_user_id</span>
+<span class="lineNum">       7 </span><span class="lineCov">         35 :  * @param {number} FK_isbn</span>
+<span class="lineNum">       8 </span><span class="lineCov">         35 :  * @returns {boolean} boolean to determine whether add was successful</span>
+<span class="lineNum">       9 </span><span class="lineCov">         47 :  */</span>
+<span class="lineNum">      10 </span><span class="lineCov">         47 : </span>
+<span class="lineNum">      11 </span><span class="lineCov">         47 : export async function addCart(data) {</span>
+<span class="lineNum">      12 </span><span class="lineCov">         89 :   let sql = `SELECT id FROM accounts WHERE user=&quot;${data.authorised}&quot;`;</span>
+<span class="lineNum">      13 </span><span class="lineCov">         89 :   const records = await db.query(sql);</span>
+<span class="lineNum">      14 </span><span class="lineCov">         89 :   if (records.length &gt; 0) {</span>
+<span class="lineNum">      15 </span><span class="lineCov">        110 :     Number(data.isbn);</span>
+<span class="lineNum">      16 </span><span class="lineCov">        110 :     const userId = records[0].id;</span>
+<a name="17"><span class="lineNum">      17 </span><span class="lineCov">         74 :     console.log(&quot;hi&quot;);</span></a>
+<span class="lineNum">      18 </span><span class="lineCov">         74 :     sql =</span>
+<span class="lineNum">      19 </span><span class="lineCov">         90 :       `INSERT INTO cart(FK_user_id, FK_isbn) VALUES (&quot;${userId}&quot;, &quot;${data.isbn}&quot;)`;</span>
+<span class="lineNum">      20 </span><span class="lineCov">        102 :     await db.query(sql);</span>
+<span class="lineNum">      21 </span><span class="lineCov">        102 :     console.log(sql);</span>
+<span class="lineNum">      22 </span><span class="lineCov">        102 :     return true;</span>
+<span class="lineNum">      23 </span><span class="lineCov">        102 :   } else {</span>
+<span class="lineNum">      24 </span><span class="lineCov">        102 :     return false;</span>
+<span class="lineNum">      25 </span><span class="lineCov">         81 :   }</span>
+<span class="lineNum">      26 </span><span class="lineCov">         39 : }</span>
+<span class="lineNum">      27 </span><span class="lineCov">         39 : </span>
+<span class="lineNum">      28 </span><span class="lineCov">         39 : /**</span>
+<span class="lineNum">      29 </span><span class="lineCov">         39 :  * Gets users cart.</span>
+<span class="lineNum">      30 </span><span class="lineCov">         39 :  * @param {string} username</span>
+<span class="lineNum">      31 </span><span class="lineCov">         39 :  * @returns {boolean} boolean to determine whether there are records for that username</span>
+<span class="lineNum">      32 </span><span class="lineCov">         39 :  */</span>
+<span class="lineNum">      33 </span><span class="lineCov">         39 : </span>
+<span class="lineNum">      34 </span><span class="lineCov">         39 : export async function getCart(user) {</span>
+<span class="lineNum">      35 </span><span class="lineCov">         67 :   if (user === undefined) {</span>
 <span class="lineNum">      36 </span><span class="lineNoCov">          0 :     return false;</span>
 <a name="37"><span class="lineNum">      37 </span><span class="lineNoCov">          0 :   } else {</span></a>
 <span class="lineNum">      38 </span><span class="lineNoCov">          0 :     let sql = `SELECT id FROM accounts WHERE user=&quot;${user}&quot;`;</span>
-<span class="lineNum">      39 </span><span class="lineCov">         76 :     const records = await db.query(sql);</span>
-<span class="lineNum">      40 </span><span class="lineCov">         76 :     console.log(user);</span>
-<span class="lineNum">      41 </span><span class="lineCov">         76 :     if (records.length &gt; 0) {</span>
-<span class="lineNum">      42 </span><span class="lineCov">         76 :       sql = `SELECT * FROM cart WHERE FK_user_id=&quot;${records[0].id}&quot;`;</span>
-<span class="lineNum">      43 </span><span class="lineCov">         76 :       const actual = await db.query(sql);</span>
-<span class="lineNum">      44 </span><span class="lineCov">         88 :       console.log(actual);</span>
-<span class="lineNum">      45 </span><span class="lineCov">         88 :       return actual;</span>
+<span class="lineNum">      39 </span><span class="lineCov">         84 :     const records = await db.query(sql);</span>
+<span class="lineNum">      40 </span><span class="lineCov">         84 :     console.log(user);</span>
+<span class="lineNum">      41 </span><span class="lineCov">         84 :     if (records.length &gt; 0) {</span>
+<span class="lineNum">      42 </span><span class="lineCov">         84 :       sql = `SELECT * FROM cart WHERE FK_user_id=&quot;${records[0].id}&quot;`;</span>
+<span class="lineNum">      43 </span><span class="lineCov">         84 :       const actual = await db.query(sql);</span>
+<span class="lineNum">      44 </span><span class="lineCov">         96 :       console.log(actual);</span>
+<span class="lineNum">      45 </span><span class="lineCov">         96 :       return actual;</span>
 <span class="lineNum">      46 </span><span class="lineNoCov">          0 :     } else {</span>
 <span class="lineNum">      47 </span><span class="lineNoCov">          0 :       return false;</span>
 <span class="lineNum">      48 </span><span class="lineNoCov">          0 :     }</span>
-<span class="lineNum">      49 </span><span class="lineCov">         62 :   }</span>
-<span class="lineNum">      50 </span><span class="lineCov">         46 : }</span>
-<span class="lineNum">      51 </span><span class="lineCov">         46 : </span>
-<span class="lineNum">      52 </span><span class="lineCov">         46 : /**</span>
-<span class="lineNum">      53 </span><span class="lineCov">         46 :  * Adds a record to users cart.</span>
-<span class="lineNum">      54 </span><span class="lineCov">         46 :  * @param {number} record</span>
-<span class="lineNum">      55 </span><span class="lineCov">         46 :  * @param {string} authorised</span>
-<span class="lineNum">      56 </span><span class="lineCov">         46 :  * @returns {boolean} boolean to determine whether delete was successful</span>
-<span class="lineNum">      57 </span><span class="lineCov">         46 :  */</span>
-<span class="lineNum">      58 </span><span class="lineCov">         46 : </span>
-<span class="lineNum">      59 </span><span class="lineCov">          6 : export async function deleteCart(data) {</span>
-<span class="lineNum">      60 </span><span class="lineCov">         42 :   console.log(data);</span>
-<span class="lineNum">      61 </span><span class="lineCov">         42 :   let sql = `SELECT id FROM accounts WHERE user=&quot;${data.authorised}&quot;`;</span>
-<span class="lineNum">      62 </span><span class="lineCov">         42 :   const record = await db.query(sql);</span>
-<span class="lineNum">      63 </span><span class="lineCov">         42 :   console.log(sql);</span>
-<span class="lineNum">      64 </span><span class="lineCov">         42 :   const userId = record[0].id;</span>
-<span class="lineNum">      65 </span><span class="lineCov">         42 :   if (data.record === &quot;*&quot;) {</span>
-<span class="lineNum">      66 </span><span class="lineCov">         60 :     sql = `DELETE FROM cart WHERE FK_user_id=&quot;${userId}&quot;`;</span>
-<span class="lineNum">      67 </span><span class="lineCov">         60 :     await db.query(sql);</span>
-<span class="lineNum">      68 </span><span class="lineCov">         60 :     console.log(sql);</span>
-<span class="lineNum">      69 </span><span class="lineCov">         60 :     return false;</span>
-<span class="lineNum">      70 </span><span class="lineCov">         60 :   } else {</span>
-<span class="lineNum">      71 </span><span class="lineCov">         60 :     sql =</span>
-<span class="lineNum">      72 </span><span class="lineCov">         60 :       `DELETE FROM cart WHERE FK_isbn=&quot;${data.record}&quot; AND FK_user_id=&quot;${userId}&quot;`;</span>
-<span class="lineNum">      73 </span><span class="lineCov">         60 :     await db.query(sql);</span>
-<span class="lineNum">      74 </span><span class="lineCov">         60 :     console.log(sql);</span>
-<span class="lineNum">      75 </span><span class="lineCov">         42 :     return true;</span>
-<span class="lineNum">      76 </span><span class="lineCov">         28 :   }</span>
-<span class="lineNum">      77 </span><span class="lineCov">          4 : }</span>
+<span class="lineNum">      49 </span><span class="lineCov">         67 :   }</span>
+<span class="lineNum">      50 </span><span class="lineCov">         47 : }</span>
+<span class="lineNum">      51 </span><span class="lineCov">         47 : </span>
+<span class="lineNum">      52 </span><span class="lineCov">         47 : /**</span>
+<span class="lineNum">      53 </span><span class="lineCov">         47 :  * Adds a record to users cart.</span>
+<span class="lineNum">      54 </span><span class="lineCov">         47 :  * @param {number} record</span>
+<span class="lineNum">      55 </span><span class="lineCov">         47 :  * @param {string} authorised</span>
+<span class="lineNum">      56 </span><span class="lineCov">         47 :  * @returns {boolean} boolean to determine whether delete was successful</span>
+<span class="lineNum">      57 </span><span class="lineCov">         47 :  */</span>
+<span class="lineNum">      58 </span><span class="lineCov">         47 : </span>
+<span class="lineNum">      59 </span><span class="lineCov">          7 : export async function deleteCart(data) {</span>
+<span class="lineNum">      60 </span><span class="lineCov">         49 :   console.log(data);</span>
+<span class="lineNum">      61 </span><span class="lineCov">         49 :   let sql = `SELECT id FROM accounts WHERE user=&quot;${data.authorised}&quot;`;</span>
+<span class="lineNum">      62 </span><span class="lineCov">         49 :   const record = await db.query(sql);</span>
+<span class="lineNum">      63 </span><span class="lineCov">         49 :   console.log(sql);</span>
+<span class="lineNum">      64 </span><span class="lineCov">         49 :   const userId = record[0].id;</span>
+<span class="lineNum">      65 </span><span class="lineCov">         49 :   if (data.record === &quot;*&quot;) {</span>
+<span class="lineNum">      66 </span><span class="lineCov">         70 :     sql = `DELETE FROM cart WHERE FK_user_id=&quot;${userId}&quot;`;</span>
+<span class="lineNum">      67 </span><span class="lineCov">         70 :     await db.query(sql);</span>
+<span class="lineNum">      68 </span><span class="lineCov">         70 :     console.log(sql);</span>
+<span class="lineNum">      69 </span><span class="lineCov">         70 :     return false;</span>
+<span class="lineNum">      70 </span><span class="lineCov">         70 :   } else {</span>
+<span class="lineNum">      71 </span><span class="lineCov">         70 :     sql =</span>
+<span class="lineNum">      72 </span><span class="lineCov">         70 :       `DELETE FROM cart WHERE FK_isbn=&quot;${data.record}&quot; AND FK_user_id=&quot;${userId}&quot;`;</span>
+<span class="lineNum">      73 </span><span class="lineCov">         70 :     await db.query(sql);</span>
+<span class="lineNum">      74 </span><span class="lineCov">         70 :     console.log(sql);</span>
+<span class="lineNum">      75 </span><span class="lineCov">         52 :     return true;</span>
+<span class="lineNum">      76 </span><span class="lineCov">         35 :   }</span>
+<span class="lineNum">      77 </span><span class="lineCov">          5 : }</span>
 </pre>
       </td>
     </tr>

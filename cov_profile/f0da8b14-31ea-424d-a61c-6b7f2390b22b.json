@@ -1,0 +1,17 @@
+{
+  "scriptId": "105",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/auth_plugin/index.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 578,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

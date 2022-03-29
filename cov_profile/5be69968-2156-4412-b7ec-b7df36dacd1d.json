@@ -1,0 +1,28 @@
+{
+  "scriptId": "158",
+  "url": "https://deno.land/std@0.125.0/hash/mod.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 2394,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "createHash",
+      "ranges": [
+        {
+          "startOffset": 381,
+          "endOffset": 447,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}

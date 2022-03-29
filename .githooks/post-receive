@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#again will use this as a notification that the code has been pushed to the repo
+
+echo "CODE HAS BEEN PUSHED TO THE REMOTE REPOSITORY!"
