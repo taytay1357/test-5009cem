@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-03-23 09:30:03</td>
+            <td class="headerValue">2022-03-29 09:29:54</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -60,34 +60,34 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span><span class="lineCov">         18 : /* db.js */</span></a>
-<span class="lineNum">       2 </span><span class="lineCov">         18 : </span>
-<span class="lineNum">       3 </span><span class="lineCov">         18 : import { Client } from &quot;https://deno.land/x/mysql/mod.ts&quot;;</span>
-<span class="lineNum">       4 </span><span class="lineCov">         18 : </span>
-<span class="lineNum">       5 </span><span class="lineCov">         18 : const home = Deno.env.get(&quot;HOME&quot;);</span>
-<span class="lineNum">       6 </span><span class="lineCov">         18 : console.log(`HOME: ${home}`);</span>
-<span class="lineNum">       7 </span><span class="lineCov">         18 : </span>
-<span class="lineNum">       8 </span><span class="lineCov">         18 : const connectionData = {</span>
-<span class="lineNum">       9 </span><span class="lineCov">         18 :   &quot;/home/codio&quot;: {</span>
-<span class="lineNum">      10 </span><span class="lineCov">         18 :     hostname: &quot;127.0.0.1&quot;,</span>
-<span class="lineNum">      11 </span><span class="lineCov">         18 :     username: &quot;websiteuser&quot;,</span>
-<span class="lineNum">      12 </span><span class="lineCov">         18 :     password: &quot;websitepassword&quot;,</span>
-<span class="lineNum">      13 </span><span class="lineCov">         18 :     db: &quot;website&quot;,</span>
-<span class="lineNum">      14 </span><span class="lineCov">         18 :   },</span>
-<span class="lineNum">      15 </span><span class="lineCov">         18 :   &quot;/app&quot;: {</span>
-<span class="lineNum">      16 </span><span class="lineCov">         18 :     hostname: &quot;HOSTNAME&quot;,</span>
-<span class="lineNum">      17 </span><span class="lineCov">         18 :     username: &quot;USERNAME&quot;,</span>
-<span class="lineNum">      18 </span><span class="lineCov">         18 :     password: &quot;PASSWORD&quot;,</span>
-<span class="lineNum">      19 </span><span class="lineCov">         18 :     db: &quot;DATABASE&quot;,</span>
-<span class="lineNum">      20 </span><span class="lineCov">         18 :   },</span>
-<span class="lineNum">      21 </span><span class="lineCov">         18 : };</span>
-<span class="lineNum">      22 </span><span class="lineCov">         18 : </span>
-<span class="lineNum">      23 </span><span class="lineCov">         18 : const conn = connectionData[home];</span>
-<span class="lineNum">      24 </span><span class="lineCov">         18 : console.log(conn);</span>
-<span class="lineNum">      25 </span><span class="lineCov">         18 : </span>
-<span class="lineNum">      26 </span><span class="lineCov">         18 : const db = await new Client().connect(conn);</span>
-<span class="lineNum">      27 </span><span class="lineCov">         18 : </span>
-<span class="lineNum">      28 </span><span class="lineCov">         18 : export { db };</span>
+<a name="1"><span class="lineNum">       1 </span><span class="lineCov">         24 : /* db.js */</span></a>
+<span class="lineNum">       2 </span><span class="lineCov">         24 : </span>
+<span class="lineNum">       3 </span><span class="lineCov">         24 : import { Client } from &quot;https://deno.land/x/mysql/mod.ts&quot;;</span>
+<span class="lineNum">       4 </span><span class="lineCov">         24 : </span>
+<span class="lineNum">       5 </span><span class="lineCov">         24 : const home = Deno.env.get(&quot;HOME&quot;);</span>
+<span class="lineNum">       6 </span><span class="lineCov">         24 : console.log(`HOME: ${home}`);</span>
+<span class="lineNum">       7 </span><span class="lineCov">         24 : </span>
+<span class="lineNum">       8 </span><span class="lineCov">         24 : const connectionData = {</span>
+<span class="lineNum">       9 </span><span class="lineCov">         24 :   &quot;/home/codio&quot;: {</span>
+<span class="lineNum">      10 </span><span class="lineCov">         24 :     hostname: &quot;127.0.0.1&quot;,</span>
+<span class="lineNum">      11 </span><span class="lineCov">         24 :     username: &quot;websiteuser&quot;,</span>
+<span class="lineNum">      12 </span><span class="lineCov">         24 :     password: &quot;websitepassword&quot;,</span>
+<span class="lineNum">      13 </span><span class="lineCov">         24 :     db: &quot;website&quot;,</span>
+<span class="lineNum">      14 </span><span class="lineCov">         24 :   },</span>
+<span class="lineNum">      15 </span><span class="lineCov">         24 :   &quot;/app&quot;: {</span>
+<span class="lineNum">      16 </span><span class="lineCov">         24 :     hostname: &quot;HOSTNAME&quot;,</span>
+<span class="lineNum">      17 </span><span class="lineCov">         24 :     username: &quot;USERNAME&quot;,</span>
+<span class="lineNum">      18 </span><span class="lineCov">         24 :     password: &quot;PASSWORD&quot;,</span>
+<span class="lineNum">      19 </span><span class="lineCov">         24 :     db: &quot;DATABASE&quot;,</span>
+<span class="lineNum">      20 </span><span class="lineCov">         24 :   },</span>
+<span class="lineNum">      21 </span><span class="lineCov">         24 : };</span>
+<span class="lineNum">      22 </span><span class="lineCov">         24 : </span>
+<span class="lineNum">      23 </span><span class="lineCov">         24 : const conn = connectionData[home];</span>
+<span class="lineNum">      24 </span><span class="lineCov">         24 : console.log(conn);</span>
+<span class="lineNum">      25 </span><span class="lineCov">         24 : </span>
+<span class="lineNum">      26 </span><span class="lineCov">         24 : const db = await new Client().connect(conn);</span>
+<span class="lineNum">      27 </span><span class="lineCov">         24 : </span>
+<span class="lineNum">      28 </span><span class="lineCov">         24 : export { db };</span>
 </pre>
       </td>
     </tr>

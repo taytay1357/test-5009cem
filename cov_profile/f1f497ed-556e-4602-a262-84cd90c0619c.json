@@ -1,0 +1,50 @@
+{
+  "scriptId": "112",
+  "url": "https://deno.land/x/bcrypt@v0.2.4/src/bcrypt/base64.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 13664,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "encode",
+      "ranges": [
+        {
+          "startOffset": 1157,
+          "endOffset": 1891,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "char64",
+      "ranges": [
+        {
+          "startOffset": 1892,
+          "endOffset": 2178,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "decode",
+      "ranges": [
+        {
+          "startOffset": 2186,
+          "endOffset": 3181,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}

@@ -11,7 +11,7 @@ import { db } from "./db.js";
 export async function addCart(data) {
   let sql = `SELECT id FROM accounts WHERE user="${data.authorised}"`;
   const records = await db.query(sql);
-  if (records.length > 0){
+  if (records.length > 0) {
     Number(data.isbn);
     const userId = records[0].id;
     console.log("hi");
@@ -19,11 +19,10 @@ export async function addCart(data) {
       `INSERT INTO cart(FK_user_id, FK_isbn) VALUES ("${userId}", "${data.isbn}")`;
     await db.query(sql);
     console.log(sql);
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
- 
 }
 
 /**
@@ -39,13 +38,13 @@ export async function getCart(user) {
     let sql = `SELECT id FROM accounts WHERE user="${user}"`;
     const records = await db.query(sql);
     console.log(user);
-    if (records.length > 0){
+    if (records.length > 0) {
       sql = `SELECT * FROM cart WHERE FK_user_id="${records[0].id}"`;
       const actual = await db.query(sql);
-      console.log(actual)
+      console.log(actual);
       return actual;
     } else {
-      return false
+      return false;
     }
   }
 }
@@ -67,12 +66,12 @@ export async function deleteCart(data) {
     sql = `DELETE FROM cart WHERE FK_user_id="${userId}"`;
     await db.query(sql);
     console.log(sql);
-    return false
+    return false;
   } else {
     sql =
       `DELETE FROM cart WHERE FK_isbn="${data.record}" AND FK_user_id="${userId}"`;
     await db.query(sql);
     console.log(sql);
-    return true
+    return true;
   }
 }

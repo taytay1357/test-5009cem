@@ -1,6 +1,7 @@
 /* accounts.js */
 
-import { compare,
+import {
+  compare,
   genSalt,
   hash,
 } from "https://deno.land/x/bcrypt@v0.2.4/mod.ts";
@@ -17,7 +18,7 @@ const salt = await genSalt(saltRounds);
  * @returns {string} the username for the valid account
  */
 export async function login(data) {
-  let sql = 
+  let sql =
     `SELECT count(id) AS count FROM accounts WHERE user="${data.username}";`;
   let records = await db.query(sql);
   if (!records[0].count) {
@@ -41,11 +42,11 @@ export async function login(data) {
  */
 export async function register(data) {
   const password = await hash(data.password, salt);
-  let sql = `SELECT * FROM accounts WHERE user="${data.username}"`
-  const records = await db.query(sql)
-  console.log(records)
+  let sql = `SELECT * FROM accounts WHERE user="${data.username}"`;
+  const records = await db.query(sql);
+  console.log(records);
   if (records.length > 0) {
-    return false
+    return false;
   } else {
     sql =
       `INSERT INTO accounts(user, pass) VALUES("${data.username}", "${password}")`;

@@ -1,0 +1,17 @@
+{
+  "scriptId": "128",
+  "url": "https://deno.land/x/bytes_formater@v1.4.0/deps.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 488,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}
