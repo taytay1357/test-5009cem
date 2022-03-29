@@ -1,0 +1,83 @@
+{
+  "scriptId": "119",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/auth_plugin/caching_sha2_password.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 7270,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "start",
+      "ranges": [
+        {
+          "startOffset": 109,
+          "endOffset": 253,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "authMoreResponse",
+      "ranges": [
+        {
+          "startOffset": 254,
+          "endOffset": 1056,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "encryptWithKey",
+      "ranges": [
+        {
+          "startOffset": 1057,
+          "endOffset": 1493,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parsePublicKey",
+      "ranges": [
+        {
+          "startOffset": 1494,
+          "endOffset": 1588,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "encrypt",
+      "ranges": [
+        {
+          "startOffset": 1589,
+          "endOffset": 1757,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "terminate",
+      "ranges": [
+        {
+          "startOffset": 1758,
+          "endOffset": 1809,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}

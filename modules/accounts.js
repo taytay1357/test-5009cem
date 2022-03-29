@@ -33,10 +33,11 @@ export async function login(data) {
 }
 
 /**
- * Adds x and y.
- * @param {number} x
- * @param {number} y
- * @returns {number} Sum of x and y
+ * registers user credentials.
+ * @param {string} username
+ * @param {string} password
+ * @param {string} password2
+ * @returns {boolean} boolean value to determine length of records
  */
 export async function register(data) {
   const password = await hash(data.password, salt);

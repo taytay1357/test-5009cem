@@ -1,0 +1,70 @@
+{
+  "scriptId": "99",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/packets/parsers/handshake.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 8186,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "parseHandshake",
+      "ranges": [
+        {
+          "startOffset": 175,
+          "endOffset": 1606,
+          "count": 1
+        },
+        {
+          "startOffset": 947,
+          "endOffset": 1000,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 1631,
+          "endOffset": 1859,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "parseAuth",
+      "ranges": [
+        {
+          "startOffset": 1902,
+          "endOffset": 2263,
+          "count": 1
+        },
+        {
+          "startOffset": 1966,
+          "endOffset": 2039,
+          "count": 0
+        },
+        {
+          "startOffset": 2048,
+          "endOffset": 2119,
+          "count": 0
+        },
+        {
+          "startOffset": 2205,
+          "endOffset": 2255,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

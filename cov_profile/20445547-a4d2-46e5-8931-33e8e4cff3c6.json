@@ -1,0 +1,49 @@
+{
+  "scriptId": "83",
+  "url": "file:///home/codio/workspace/modules/stock.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 1873,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "addStock",
+      "ranges": [
+        {
+          "startOffset": 536,
+          "endOffset": 1672,
+          "count": 5
+        },
+        {
+          "startOffset": 750,
+          "endOffset": 1185,
+          "count": 2
+        },
+        {
+          "startOffset": 1185,
+          "endOffset": 1614,
+          "count": 3
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getStock",
+      "ranges": [
+        {
+          "startOffset": 1729,
+          "endOffset": 1872,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

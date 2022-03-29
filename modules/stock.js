@@ -1,5 +1,20 @@
 import { db } from "./db.js";
 
+/**
+ * Adds stock to the system.
+ * @param {string} data.fields.title
+ * @param {string} data.fields.author
+ * @param {date} data.fields.publication_date
+ * @param {string} data.fields.description
+ * @param {number} data.fields.trade_price
+ * @param {number} data.fields.retail_price
+ * @param {number} data.fields.quantity
+ * @param {string} data.files.contentType
+ * @param {string} data.files.name
+ * @param {string} data.files.filename
+ * @returns {string} the sql that is being performed
+ */
+
 export async function addStock(data) {
   console.log(data)
   let sql = `SELECT isbn FROM stock WHERE isbn="${data.fields.isbn}"`;
@@ -20,6 +35,10 @@ export async function addStock(data) {
   await db.query(sql);
   return sql;
 }
+
+/**
+ * @returns {object} the stock records
+ */
 
 export async function getStock() {
   const sql = `SELECT * FROM stock`;

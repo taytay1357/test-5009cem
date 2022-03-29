@@ -1,5 +1,13 @@
 import { db } from "./db.js";
 
+/**
+ * Adds a record to users cart.
+ * @param {number} cart_id
+ * @param {number} FK_user_id
+ * @param {number} FK_isbn
+ * @returns {boolean} boolean to determine whether add was successful
+ */
+
 export async function addCart(data) {
   let sql = `SELECT id FROM accounts WHERE user="${data.authorised}"`;
   const records = await db.query(sql);
@@ -18,6 +26,12 @@ export async function addCart(data) {
  
 }
 
+/**
+ * Gets users cart.
+ * @param {string} username
+ * @returns {boolean} boolean to determine whether there are records for that username
+ */
+
 export async function getCart(user) {
   if (user === undefined) {
     return false;
@@ -35,6 +49,13 @@ export async function getCart(user) {
     }
   }
 }
+
+/**
+ * Adds a record to users cart.
+ * @param {number} record
+ * @param {string} authorised
+ * @returns {boolean} boolean to determine whether delete was successful
+ */
 
 export async function deleteCart(data) {
   console.log(data);

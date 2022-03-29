@@ -1,0 +1,147 @@
+{
+  "scriptId": "108",
+  "url": "https://deno.land/x/mysql@v2.10.2/src/deferred.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 5918,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "<instance_members_initializer>",
+      "ranges": [
+        {
+          "startOffset": 72,
+          "endOffset": 137,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "DeferredStack",
+      "ranges": [
+        {
+          "startOffset": 143,
+          "endOffset": 326,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "get size",
+      "ranges": [
+        {
+          "startOffset": 331,
+          "endOffset": 376,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "get maxSize",
+      "ranges": [
+        {
+          "startOffset": 381,
+          "endOffset": 432,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "get available",
+      "ranges": [
+        {
+          "startOffset": 437,
+          "endOffset": 495,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "pop",
+      "ranges": [
+        {
+          "startOffset": 500,
+          "endOffset": 1000,
+          "count": 1
+        },
+        {
+          "startOffset": 546,
+          "endOffset": 595,
+          "count": 0
+        },
+        {
+          "startOffset": 780,
+          "endOffset": 864,
+          "count": 0
+        },
+        {
+          "startOffset": 899,
+          "endOffset": 999,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "push",
+      "ranges": [
+        {
+          "startOffset": 1005,
+          "endOffset": 1226,
+          "count": 42
+        },
+        {
+          "startOffset": 1050,
+          "endOffset": 1134,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "tryPopAvailable",
+      "ranges": [
+        {
+          "startOffset": 1231,
+          "endOffset": 1290,
+          "count": 42
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "remove",
+      "ranges": [
+        {
+          "startOffset": 1295,
+          "endOffset": 1494,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "reduceSize",
+      "ranges": [
+        {
+          "startOffset": 1499,
+          "endOffset": 1541,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}
