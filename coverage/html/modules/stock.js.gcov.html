@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - cov_profile.lcov - modules/stock.js</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">modules</a> - stock.js<span style="font-size: 80%;"> (source / <a href="stock.js.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">cov_profile.lcov</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">48</td>
+            <td class="headerCovTableEntry">49</td>
+            <td class="headerCovTableEntryHi">98.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2022-03-29 10:15:07</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span><span class="lineCov">          1 : import { db } from &quot;./db.js&quot;;</span></a>
+<span class="lineNum">       2 </span><span class="lineCov">          1 : </span>
+<span class="lineNum">       3 </span><span class="lineCov">          1 : /**</span>
+<span class="lineNum">       4 </span><span class="lineCov">          1 :  * Adds stock to the system.</span>
+<span class="lineNum">       5 </span><span class="lineCov">          1 :  * @param {string} data.fields.title</span>
+<span class="lineNum">       6 </span><span class="lineCov">          1 :  * @param {string} data.fields.author</span>
+<span class="lineNum">       7 </span><span class="lineCov">          1 :  * @param {date} data.fields.publication_date</span>
+<span class="lineNum">       8 </span><span class="lineCov">          1 :  * @param {string} data.fields.description</span>
+<span class="lineNum">       9 </span><span class="lineCov">          1 :  * @param {number} data.fields.trade_price</span>
+<span class="lineNum">      10 </span><span class="lineCov">          1 :  * @param {number} data.fields.retail_price</span>
+<span class="lineNum">      11 </span><span class="lineCov">          1 :  * @param {number} data.fields.quantity</span>
+<span class="lineNum">      12 </span><span class="lineCov">          1 :  * @param {string} data.files.contentType</span>
+<span class="lineNum">      13 </span><span class="lineCov">          1 :  * @param {string} data.files.name</span>
+<span class="lineNum">      14 </span><span class="lineCov">          1 :  * @param {string} data.files.filename</span>
+<span class="lineNum">      15 </span><span class="lineCov">          1 :  * @returns {string} the sql that is being performed</span>
+<span class="lineNum">      16 </span><span class="lineCov">          1 :  */</span>
+<a name="17"><span class="lineNum">      17 </span><span class="lineCov">          1 : </span></a>
+<span class="lineNum">      18 </span><span class="lineCov">          1 : export async function addStock(data) {</span>
+<span class="lineNum">      19 </span><span class="lineCov">          6 :   console.log(data);</span>
+<span class="lineNum">      20 </span><span class="lineCov">          6 :   let sql = `SELECT isbn FROM stock WHERE isbn=&quot;${data.fields.isbn}&quot;`;</span>
+<span class="lineNum">      21 </span><span class="lineCov">          6 :   const status = await db.query(sql);</span>
+<span class="lineNum">      22 </span><span class="lineCov">          6 :   Number(data.fields.isbn);</span>
+<span class="lineNum">      23 </span><span class="lineCov">          6 :   if (status.length &gt; 0) {</span>
+<span class="lineNum">      24 </span><span class="lineCov">          8 :     sql =</span>
+<span class="lineNum">      25 </span><span class="lineCov">          8 :       `UPDATE stock SET book_title = &quot;${data.fields.title}&quot;, author = &quot;${data.fields.author}&quot;, publication_date = &quot;${data.fields.publication_date}&quot;, filepath = &quot;${</span>
+<span class="lineNum">      26 </span><span class="lineCov">          8 :         data.files[0].filename</span>
+<span class="lineNum">      27 </span><span class="lineCov">          8 :       }&quot;, description = &quot;${data.fields.description}&quot;, trade_price = &quot;${data.fields.trade_price}&quot;, retail_price = &quot;${data.fields.retail_price}&quot;, quantity=&quot;${data.fields.quantity}&quot; WHERE isbn = &quot;${data.fields.isbn}&quot;;`;</span>
+<span class="lineNum">      28 </span><span class="lineCov">          6 :   } else {</span>
+<span class="lineNum">      29 </span><span class="lineCov">          9 :     sql =</span>
+<span class="lineNum">      30 </span><span class="lineCov">          9 :       `INSERT INTO stock(isbn, book_title, author, publication_date, filepath, description, trade_price, retail_price, quantity) VALUES (&quot;${data.fields.isbn}&quot;, &quot;${data.fields.title}&quot;, &quot;${data.fields.author}&quot;, &quot;${data.fields.publication_date}&quot;, &quot;${</span>
+<span class="lineNum">      31 </span><span class="lineCov">          9 :         data.files[0].filename</span>
+<span class="lineNum">      32 </span><span class="lineCov">          9 :       }&quot;,&quot;${data.fields.description}&quot;, &quot;${data.fields.trade_price}&quot;, &quot;${data.fields.retail_price}&quot;, &quot;${data.fields.quantity}&quot;)`;</span>
+<span class="lineNum">      33 </span><span class="lineCov">          6 :   }</span>
+<span class="lineNum">      34 </span><span class="lineCov">          6 :   console.log(sql);</span>
+<span class="lineNum">      35 </span><span class="lineCov">          6 :   await db.query(sql);</span>
+<span class="lineNum">      36 </span><span class="lineCov">          6 :   return sql;</span>
+<span class="lineNum">      37 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">      38 </span><span class="lineCov">          1 : </span>
+<span class="lineNum">      39 </span><span class="lineCov">          1 : /**</span>
+<span class="lineNum">      40 </span><span class="lineCov">          1 :  * @returns {object} the stock records</span>
+<span class="lineNum">      41 </span><span class="lineCov">          1 :  */</span>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">          1 : </span></a>
+<span class="lineNum">      43 </span><span class="lineCov">          1 : export async function getStock() {</span>
+<span class="lineNum">      44 </span><span class="lineCov">          2 :   const sql = `SELECT * FROM stock`;</span>
+<span class="lineNum">      45 </span><span class="lineCov">          2 :   const records = await db.query(sql);</span>
+<span class="lineNum">      46 </span><span class="lineCov">          2 :   console.log(sql);</span>
+<span class="lineNum">      47 </span><span class="lineCov">          2 :   return records;</span>
+<span class="lineNum">      48 </span><span class="lineCov">          1 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
