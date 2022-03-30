@@ -14,7 +14,7 @@
 	<body>
 		<header>
 			<h1>Home</h1>
-			{{#if cookies_accept}}
+			{{#if cookie_accept}}
 				{{#if authorised}}
 					<a href="/logout">Log out</a>
 					<a href="/cart" style="margin: 0;padding: 0;margin-right: 3vw;background-color: #ccc;border: none; height: 95%; display: flex; justify-content: center; align-items: center; "><figure><p style="position:absolute; color: red; width: 4%; height: 10%; margin: 0; padding-bottom: 2vw; font-weight: bold; font-size: 1.75vw;">{{this.counter}}</p><img src="./uploads/cart.png" alt="Cart Icon" style="width: 60px; height: 60px; margin-top: 0.5vw;"/></figure></a>
