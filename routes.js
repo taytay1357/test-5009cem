@@ -17,7 +17,12 @@ const router = new Router();
 router.get("/", async (context) => {
   const authorised = context.cookies.get("authorised");
   const admin = context.cookies.get("admin");
-  console.log(admin);
+  const cookies_accept = context.cookies.get("accept")
+  const cookies_decline = context.cookies.get("decline")
+  console.log(cookies_accept, cookies_decline)
+  if (cookies_decline === undefined && cookies_accept === undefined){
+    context.response.redirect("/cookie")
+  }
   let records = [];
   let cart_data = [];
   if (authorised === undefined) {
@@ -43,7 +48,7 @@ router.get("/", async (context) => {
       counter += 1;
     }
   }
-  const data = { authorised, admin, counter, price, sub_data: records };
+  const data = { authorised, admin, counter, price, cookies_accept, cookies_decline ,sub_data: records };
   const body = await handle.renderView("home", data);
   context.response.body = body;
 });
@@ -59,6 +64,25 @@ router.post("/", async (context) => {
   await addCart(obj);
   context.response.redirect("/cart");
 });
+
+router.get("/cookie", async (context) => {
+  const body = await handle.renderView("cookie");
+  context.response.body = body;
+})
+
+router.post("/cookie", async (context) => {
+  const data_body = context.request.body({ type: "form" });
+  const value = await data_body.value;
+  const obj = Object.fromEntries(value);
+  console.log(obj)
+  const cookie_status = obj.cookie_status
+  if (cookie_status === "Accept"){
+    context.cookies.set("accept", cookie_status)
+  } else {
+    context.cookies.set("decline", cookie_status)
+  }
+  context.response.redirect("/")
+})
 
 router.get("/cart", async (context) => {
   const authorised = context.cookies.get("authorised");

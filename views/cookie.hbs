@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Cookies</title>
+		<meta name="description" content="form to add new books">
+		<meta name="author" content="Mark Tyers">
+		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+		<link href="/style.css" type="text/css" rel="stylesheet" />
+		<script type="module" src="/main.js"></script>
+	</head>
+	<body>
+		<header style= "opacity: 20%;">
+			<h1>Home</h1>
+		</header>
+	<main style="max-width: 60%; height: 100%; display: flex; justify-content:center; flex-direction: row; display: flex; flex-wrap: wrap;">
+		<form class="cookie" method="post" action="/cookie">
+            <p>This website makes use of cookies to make the site work. You can see the full cookie policy by clicking on the 'Cookie Policy' and can decline or accept. NOTE: Declining cookies will not allow you to use the login feature and therefore the site won't work.</p>
+            <input name="cookie_status" type="submit" value="Accept"/>
+            <input name="cookie_status" type="submit" value="Decline"/>
+            <a href="#">Cookie Policy</a>
+        </form>
+	</main>
+	</body>
+</html>

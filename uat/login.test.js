@@ -11,7 +11,7 @@ Deno.test("access login page from homepage   ", async (test) => {
   const browser = await puppeteer.launch({ headless: false });
   const pageNew = await browser.newPage(); // Launch browser
   console.log("Step1 - Open Browser"); //Display message
-  await pageNew.goto(url, { waitUntil: "networkidle0" }); //Open LambdaGeeks
+  await pageNew.goto(url, { waitUntil: "networkidle0" });
   await pageNew.click('a[href="/login"]');
   const heading = await pageNew.$eval("h1", (node) => {
     node.innerText;

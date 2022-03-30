@@ -456,3 +456,28 @@ section.home_stock {
 	padding: 1vw;
 	margin-right: 1vw;
 }
+
+
+.cookie {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+}
+
+.cookie > p {
+	width: 60%;
+	padding: 1vw;
+	margin: 0.5vw;
+}
+
+.cookie > input {
+	padding: 1vw;
+	margin: 0 1vw;
+}
+
+.cookie > a {
+	font-size: 1vw;
+}

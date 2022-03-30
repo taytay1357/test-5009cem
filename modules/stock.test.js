@@ -1,8 +1,6 @@
 import { addStock, getStock } from "./stock.js";
 import {
-  assertEquals,
-  assertThrows,
-  fail,
+  assertEquals
 } from "https://deno.land/std@0.79.0/testing/asserts.ts";
 import { db } from "./db.js";
 
