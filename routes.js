@@ -84,12 +84,12 @@ router.post("/", async (context) => {
 router.get("/terms", async (context) => {
   const body = await handle.renderView("terms");
   context.response.body = body;
-})
+});
 
 router.get("/privacy", async (context) => {
   const body = await handle.renderView("privacy");
   context.response.body = body;
-})
+});
 
 router.get("/cookie", async (context) => {
   const body = await handle.renderView("cookie");

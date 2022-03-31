@@ -52,64 +52,63 @@ try {
 
 try {
   let cookie_policy = document.getElementById("cookie_policy_select");
-  let cookie_holder = document.getElementsByClassName("cookie_policy_container")[0];
-  let privacy_holder = document.getElementsByClassName("privacy_policy_container")[0]
-  let terms_holder = document.getElementsByClassName("terms_container")[0]
+  let cookie_holder =
+    document.getElementsByClassName("cookie_policy_container")[0];
+  let privacy_holder =
+    document.getElementsByClassName("privacy_policy_container")[0];
+  let terms_holder = document.getElementsByClassName("terms_container")[0];
   let privacy = document.getElementsByClassName("privacy")[0];
   let cookie_exit = document.getElementsByClassName("cookie_exit")[0];
   let privacy_exit = document.getElementsByClassName("privacy_exit")[0];
   let terms_exit = document.getElementsByClassName("terms_exit")[0];
   let terms = document.getElementsByClassName("terms")[0];
-  let privacy_text = document.getElementsByClassName("privacy_policy_text")
-  let cookie_text = document.getElementsByClassName("cookie_policy_text")
-  let terms_text = document.getElementsByClassName("terms_policy_text")
-  console.log(cookie_text)
+  let privacy_text = document.getElementsByClassName("privacy_policy_text");
+  let cookie_text = document.getElementsByClassName("cookie_policy_text");
+  let terms_text = document.getElementsByClassName("terms_policy_text");
+  console.log(cookie_text);
   if (cookie_policy != null) {
     cookie_policy.addEventListener("click", () => {
       console.log(cookie_holder.style);
       cookie_holder.style.display = "block";
       cookie_exit.style.display = "block";
-      for (let i=0; i<cookie_text.length; i++) {
-        cookie_text[i].style.display = "block"
+      for (let i = 0; i < cookie_text.length; i++) {
+        cookie_text[i].style.display = "block";
       }
-      
     });
   }
-  if (cookie_exit != null){
+  if (cookie_exit != null) {
     cookie_exit.addEventListener("click", () => {
-    cookie_holder.style.display = "none";
-    cookie_exit.style.display = "none";
-    for (let i=0; i<cookie_text.length; i++) {
-      cookie_text[i].style.display = "none"
-    }
-    
+      cookie_holder.style.display = "none";
+      cookie_exit.style.display = "none";
+      for (let i = 0; i < cookie_text.length; i++) {
+        cookie_text[i].style.display = "none";
+      }
     });
   }
-  
-  if(privacy_exit != null) {
+
+  if (privacy_exit != null) {
     privacy_exit.addEventListener("click", () => {
-    privacy_holder.style.display = "none";
-    privacy_exit.style.display = "none";
-    for(let i=0; i<privacy_text.length; i++) {
-          privacy_text[i].style.display = "none"
+      privacy_holder.style.display = "none";
+      privacy_exit.style.display = "none";
+      for (let i = 0; i < privacy_text.length; i++) {
+        privacy_text[i].style.display = "none";
       }
-    
-    })
+    });
   }
 
   if (terms_exit != null) {
     terms_exit.addEventListener("click", () => {
-    terms_holder.style.display = "none";
-    terms_exit.style.display = "none";
-    terms_text.style.display = "none"
-    })
+      terms_holder.style.display = "none";
+      terms_exit.style.display = "none";
+      terms_text.style.display = "none";
+    });
   }
   if (terms != null) {
     terms.addEventListener("click", () => {
       terms_holder.style.display = "block";
       terms_exit.style.display = "block";
       terms_holder.style.block = "block";
-      terms_text.style.display = "block"
+      terms_text.style.display = "block";
     });
   }
 
@@ -118,10 +117,9 @@ try {
       privacy_holder.style.display = "block";
       privacy_exit.style.display = "block";
       privacy_holder.style.display = "block";
-      for(let i=0; i<privacy_text.length; i++) {
-        privacy_text[i].style.display = "block"
+      for (let i = 0; i < privacy_text.length; i++) {
+        privacy_text[i].style.display = "block";
       }
-      
     });
   }
 } catch (err) {
