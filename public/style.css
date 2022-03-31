@@ -486,7 +486,7 @@ section.home_stock {
 	cursor: pointer;
 }
 
-.cookie_container {
+.policy_container {
 	position: absolute;
 	width: 50%;
 	display: none;
@@ -519,3 +519,21 @@ body > figure {
 img[alt="exit"]:hover {
 	cursor: pointer;
 }
+
+.policies_container {
+	height: 80%;
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.policies_container > a {
+	margin: 1vw;
+	width: 10%;
+}
+
+.policies_container > a:hover {
+	cursor: pointer;
+}
+

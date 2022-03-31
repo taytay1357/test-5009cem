@@ -31,25 +31,34 @@
                 <a href="/cookie">Manage Cookies</a>
 			{{/if}}
 		</header>
-	<main style="max-width: 100%; height: 100%; flex-direction: row; display: flex; flex-wrap: wrap;">
-		{{#if authorised}}
-			{{#each sub_data}}
-			<section class="home_stock">
-				<p>{{this.book_title}}</p>
-				<figure><img src="{{this.filepath}}" alt="Book Cover"/></figure>
-                <form class="home_form" method="post" action="/">
-					<input type="hidden" name="isbn" value="{{this.isbn}}"/>
-                    <input type="submit" value="Add to cart"/>
-                </form>
-			</section>
-			{{/each}}
-		{{else}}
-			{{#if admin}}
-				<p>Admins can only see the stock, cannot purchase the stock but can manage the stock on the 'STOCK LEVELS' screen.</p>
+		<p class="policy_container">
+			<figure><img class="cookie_exit" src="./uploads/close.png" alt="exit"/></figure>
+		</p>
+		<main style="max-width: 100%; height: 800px; flex-direction: row; display: flex; flex-wrap: wrap;">
+			{{#if authorised}}
+				{{#each sub_data}}
+				<section class="home_stock">
+					<p>{{this.book_title}}</p>
+					<figure><img src="{{this.filepath}}" alt="Book Cover"/></figure>
+					<form class="home_form" method="post" action="/">
+						<input type="hidden" name="isbn" value="{{this.isbn}}"/>
+						<input type="submit" value="Add to cart"/>
+					</form>
+				</section>
+				{{/each}}
 			{{else}}
-				<p>WELCOME TO THE HOME SCREEN!</p>
+				{{#if admin}}
+					<p>Admins can only see the stock, cannot purchase the stock but can manage the stock on the 'STOCK LEVELS' screen.</p>
+				{{else}}
+					<p style="width: 100%;">WELCOME TO THE HOME SCREEN!</p>
+				{{/if}}
 			{{/if}}
-		{{/if}}
-	</main>
+
+			<p class="policies_container">
+				<a class="terms">Terms of Use</a>
+				<a class="privacy">Privacy Policy</a>
+				<a id="cookie_policy_select" class="cookie_policy_select">Cookie Policy</a>
+			</p>
+		</main>
 	</body>
 </html>
