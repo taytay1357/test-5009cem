@@ -486,11 +486,11 @@ section.home_stock {
 	cursor: pointer;
 }
 
-.policy_container {
+.cookie_policy_container, .privacy_policy_container, .terms_container {
 	position: absolute;
 	width: 50%;
 	display: none;
-	height: 100%;
+	height: 1400px;
 	left: 22%;
 	background-color: white;
 	border: 1px solid black;
@@ -498,7 +498,7 @@ section.home_stock {
 	padding: 2vw;
 }
 
-.cookie_exit{
+.cookie_exit, .privacy_exit, .terms_exit{
 	display: none;
 }
 img[alt="exit"] {
@@ -521,7 +521,7 @@ img[alt="exit"]:hover {
 }
 
 .policies_container {
-	height: 80%;
+	height: 30%;
 	width: 100%;
 	display: flex;
 	align-items: flex-end;
@@ -537,3 +537,17 @@ img[alt="exit"]:hover {
 	cursor: pointer;
 }
 
+
+
+.cookie_policy_text, .terms_policy_text, .privacy_policy_text {
+	display: none;
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	z-index: 1000;
+	width: 35%;
+	margin: 1vw 0;
+	padding: 1vw;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}

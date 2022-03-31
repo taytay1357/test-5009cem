@@ -52,47 +52,78 @@ try {
 
 try {
   let cookie_policy = document.getElementById("cookie_policy_select");
-  let cookie_holder = document.getElementsByClassName("policy_container")[0];
-  let privacy = document.getElementsByClassName("privacy")[0]
+  let cookie_holder = document.getElementsByClassName("cookie_policy_container")[0];
+  let privacy_holder = document.getElementsByClassName("privacy_policy_container")[0]
+  let terms_holder = document.getElementsByClassName("terms_container")[0]
+  let privacy = document.getElementsByClassName("privacy")[0];
   let cookie_exit = document.getElementsByClassName("cookie_exit")[0];
-  let terms = document.getElementsByClassName("terms")[0]
-  let terms_of_use = document.getElementsByClassName("terms_container")[0]
-  let cookie_actual = document.getElementsByClassName("cookie_container")[0]
-  let privacy_policy = document.getElementsByClassName("privacy_container")[0]
-  console.log(cookie_policy, cookie_holder, cookie_exit, terms)
-  
-  if(cookie_policy != null) {
+  let privacy_exit = document.getElementsByClassName("privacy_exit")[0];
+  let terms_exit = document.getElementsByClassName("terms_exit")[0];
+  let terms = document.getElementsByClassName("terms")[0];
+  let privacy_text = document.getElementsByClassName("privacy_policy_text")
+  let cookie_text = document.getElementsByClassName("cookie_policy_text")
+  let terms_text = document.getElementsByClassName("terms_policy_text")
+  console.log(cookie_text)
+  if (cookie_policy != null) {
     cookie_policy.addEventListener("click", () => {
-    console.log(cookie_holder.style);
-    cookie_holder.style.display = "block";
-    cookie_exit.style.display = "block";
-    cookie_actual.style.display = "block"
-  });
+      console.log(cookie_holder.style);
+      cookie_holder.style.display = "block";
+      cookie_exit.style.display = "block";
+      for (let i=0; i<cookie_text.length; i++) {
+        cookie_text[i].style.display = "block"
+      }
+      
+    });
   }
-  
-  cookie_exit.addEventListener("click", () => {
+  if (cookie_exit != null){
+    cookie_exit.addEventListener("click", () => {
     cookie_holder.style.display = "none";
     cookie_exit.style.display = "none";
+    for (let i=0; i<cookie_text.length; i++) {
+      cookie_text[i].style.display = "none"
+    }
     
-  });
-
-  if(terms != null) {
-    terms.addEventListener('click', () => {
-    cookie_holder.style.display = "block"
-    cookie_exit.style.display = "block"
-    terms_of_use.style.block = "block"
-  })
+    });
   }
   
-  if (privacy != null){
-    privacy.addEventListener('click', () => {
-    cookie_holder.style.display = "block"
-    cookie_exit.style.display = "block"
-    privacy_policy.style.display = "block"
-  })
+  if(privacy_exit != null) {
+    privacy_exit.addEventListener("click", () => {
+    privacy_holder.style.display = "none";
+    privacy_exit.style.display = "none";
+    for(let i=0; i<privacy_text.length; i++) {
+          privacy_text[i].style.display = "none"
+      }
+    
+    })
   }
-  
 
+  if (terms_exit != null) {
+    terms_exit.addEventListener("click", () => {
+    terms_holder.style.display = "none";
+    terms_exit.style.display = "none";
+    terms_text.style.display = "none"
+    })
+  }
+  if (terms != null) {
+    terms.addEventListener("click", () => {
+      terms_holder.style.display = "block";
+      terms_exit.style.display = "block";
+      terms_holder.style.block = "block";
+      terms_text.style.display = "block"
+    });
+  }
+
+  if (privacy != null) {
+    privacy.addEventListener("click", () => {
+      privacy_holder.style.display = "block";
+      privacy_exit.style.display = "block";
+      privacy_holder.style.display = "block";
+      for(let i=0; i<privacy_text.length; i++) {
+        privacy_text[i].style.display = "block"
+      }
+      
+    });
+  }
 } catch (err) {
   console.log(err.message);
 }

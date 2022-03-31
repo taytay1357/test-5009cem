@@ -16,7 +16,28 @@
 		<h1>Log In</h1>
 		<a href="/register">Register</a>
 		</header>
-		<main>
+		<p class="cookie_policy_container">
+			<figure><img class="cookie_exit" src="./uploads/close.png" alt="exit"/></figure>
+			<h1 class="cookie_policy_text" style="font-size: 2vw;"><strong>Cookie Policy</strong></h1>
+			<p class="cookie_policy_text" style="top: 40%" ><strong>What are cookies?</strong></p>
+			<p class="cookie_policy_text" style="top: 44%">Cookies are small text files that websites place on the computers and mobile devices of people who visit those websites.<br/>These text files allow a website to remember your device and how you interacted with the website, which is useful for a number of different purposes.</p>
+			<p class="cookie_policy_text" style="top: 67%"><strong>How do we use cookies?</strong></p>
+			<p class="cookie_policy_text" style="top: 71%">We use cookies to track the authorised user on the page. For example the user logs in and then the cookie is set on the browser tracking the user logged into the system.</p>
+			<p class="cookie_policy_text" style="top: 88%"><strong>Third Party Cookies</strong></p>
+			<p class="cookie_policy_text" style="top: 92%">This website does not use any third party cookies to track your device for any advertisement information or any of that kind.</p>
+			<p class="cookie_policy_text" style="top: 105%"><strong>Note</strong></p>
+			<p class="cookie_policy_text" style="top: 109%">By not accepting the cookies on this website the functionality of the system will not be available to you.<br/><br/> Our cookies do not handle any sensitive data and urge the user to acccept the cookies so that they can access the website.</p>
+		</p>
+		<p class="privacy_policy_container" style="height: 1800px;">
+			<figure><img class="privacy_exit" src="./uploads/close.png" alt="exit"/></figure>
+			<h1 class="privacy_policy_text" style="font-size: 2vw;">Privacy Policy</h1>
+			<p class="privacy_policy_text" style="top: 40%; "><strong>Type of Data Collected</strong><br/><br/>The data we collect from you the user, is your login information i.e. username and password. This is not deemed as sensitive data as yes it uniquely identifies you the user but it doesn't show anything specific about you as a person for example: your email address, address etc.<br/><br/><strong>How do we use your personal data?</strong><br/><br/>We use your personal data to uniquely identify you so that you can make your own purchases, add your own books to your cart. Having this information allows you the user to use the system with no problem and uniquely.<br/><br/><strong>Retention of your personal data</strong><br/><br/>We retain your username and your password in our database so that you can come back to the website and login using the same details. Having this aswell allows the user to keep things in their cart for the next time they login, having this is very useful to you the user.<br/><br/><strong>Transfer of your personal data</strong><br/><br/>Your information is stored on a local system this means that when you agree to this privacy policy your information could not be stored in the same state, country or province. Data is managed securely and with care.<br/><br/><strong>Your Rights</strong><br/><br/>You have the right to ensure that your data is being processed lawfully. Any data that you request will be sent to you in accordance with the Freedom of Information Act and Data Protection Act. We will provide personal data in statuatory time frames, to be able to access your personal data we may request further information. If you have any complaints you have the right to complain to the Information Commissioners Office(ICO).<br/><br/><strong>Any changes to thh privacy policy in the future will be on this page, you will also be notified.</strong><br/><br/><a href="/privacy" target="_blank">FULL POLICY HERE</a></p>
+		</p>
+		<p class="terms_container">
+			<figure><img class="terms_exit" src="./uploads/close.png" alt="exit"/></figure>
+			<p class="terms_policy_text" style=" display: none; position: absolute;top: 30%;left: 25%;z-index: 1000;width: 45%;margin: 1vw 0;padding: 1vw;border-left: 1px solid black;border-right: 1px solid black;">this is the terms of use policy</p>
+		</p>
+		<main style="height: 1000px;max-width: 100%;">
 		<form action="/login" method="post">
 			<p>
 				<label for="user">Username</label><br />
@@ -29,6 +50,11 @@
 			<p><input type="submit" value="Log in"></p>
 		</form>
 		<p><a href="/">Home page</a></p>
+		<p class="policies_container" style="height: 30%">
+				<a href="/terms" target="_blank">Terms of Use</a>
+				<a class="privacy">Privacy Policy</a>
+				<a id="cookie_policy_select" class="cookie_policy_select">Cookie Policy</a>
+		</p>
 		</main>
 	</body>
 </html>
