@@ -11,7 +11,9 @@ COVERAGE REPORT IS SHOWN IN THE ./coverage/html DIRECTORY
 
 BRANCHES ARE NOT NAMED AFTER EACH FEATURE BUT ARE NAMED ACCORDING TO THE TASK
 
-FEATURE 1 - admin, add_stock FEATURE 2 - stock_levels FEATURE 3 - home_screen
+FEATURE 1 - admin, add_stock 
+FEATURE 2 - stock_levels 
+FEATURE 3 - home_screen
 FEATURE 4 - cart
 
 testing branch was added to throughout the development lifecycle

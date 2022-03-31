@@ -481,3 +481,41 @@ section.home_stock {
 .cookie > a {
 	font-size: 1vw;
 }
+
+.cookie > a:hover {
+	cursor: pointer;
+}
+
+.cookie_container {
+	position: absolute;
+	width: 50%;
+	display: none;
+	height: 100%;
+	left: 22%;
+	background-color: white;
+	border: 1px solid black;
+	overflow: scroll;
+	padding: 2vw;
+}
+
+.cookie_exit{
+	display: none;
+}
+img[alt="exit"] {
+	margin-top: 3vw;
+	width: 10%;
+	left: 20%;
+}
+
+body > figure {
+	left: 23%;
+	position: absolute;
+	width: 20%;
+	margin: 0;
+	margin-right: 0;
+	
+}
+
+img[alt="exit"]:hover {
+	cursor: pointer;
+}

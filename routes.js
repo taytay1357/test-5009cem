@@ -17,19 +17,19 @@ const router = new Router();
 router.get("/", async (context) => {
   const authorised = context.cookies.get("authorised");
   const admin = context.cookies.get("admin");
-  const cookie_status = context.cookies.get("cookie_status")
+  const cookie_status = context.cookies.get("cookie_status");
   console.log(cookie_status);
   if (cookie_status === undefined) {
     context.response.redirect("/cookie");
   }
-  let cookie_accept
-  let cookie_decline
-  if (cookie_status === "Accept"){
-    cookie_accept = cookie_status
-    cookie_decline = undefined
+  let cookie_accept;
+  let cookie_decline;
+  if (cookie_status === "Accept") {
+    cookie_accept = cookie_status;
+    cookie_decline = undefined;
   } else {
-    cookie_accept = undefined 
-    cookie_decline = cookie_status
+    cookie_accept = undefined;
+    cookie_decline = cookie_status;
   }
   let records = [];
   let cart_data = [];
@@ -91,7 +91,7 @@ router.post("/cookie", async (context) => {
   const value = await data_body.value;
   const obj = Object.fromEntries(value);
   console.log(obj);
-  const cookie_status = obj.cookie_status
+  const cookie_status = obj.cookie_status;
   context.cookies.set("cookie_status", cookie_status);
   context.response.redirect("/");
 });
