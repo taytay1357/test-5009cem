@@ -14,17 +14,65 @@
 	<body>
 		<header>
 			<h1>Home</h1>
-			{{#if authorised}}
-				<a href="/logout">Log out</a>
-			{{else}}
-				<a href="/login">Log in</a>
+			{{#if cookie_accept}}
+				{{#if authorised}}
+					<a href="/logout">Log out</a>
+					<a href="/cart" style="margin: 0;padding: 0;margin-right: 3vw;background-color: #ccc;border: none; height: 95%; display: flex; justify-content: center; align-items: center; "><figure><p style="position:absolute; color: red; width: 4%; height: 10%; margin: 0; padding-bottom: 2vw; font-weight: bold; font-size: 1.75vw;">{{this.counter}}</p><img src="./uploads/cart.png" alt="Cart Icon" style="width: 60px; height: 60px; margin-top: 0.5vw;"/></figure></a>
+					<p style="margin: 0;width: 80%;padding: 3vw;height: 100%;text-align: right;margin-right: 0;">£{{this.price}}.00<p>
+				{{else}}
+					{{#if admin}}
+						<a href="/logout">Log out</a>
+						<a href="/stock">Stock Levels</a>
+					{{else}}
+						<a href="/login">Log in</a>
+					{{/if}}
+				{{/if}}
+            {{else}}
+                <a href="/cookie">Manage Cookies</a>
 			{{/if}}
 		</header>
-	<main>
-		<p>This is the home page. Users can see it without logging in.</p>
-		{{#if authorised}}
-			<p><a href="/foo">Foo Bar</a></p>
-		{{/if}}
-	</main>
+		<p class="cookie_policy_container">
+			<figure><img class="cookie_exit" src="./uploads/close.png" alt="exit"/></figure>
+			<h1 class="cookie_policy_text" style="font-size: 2vw;"><strong>Cookie Policy</strong></h1>
+			<p class="cookie_policy_text" style="top: 40%" ><strong>What are cookies?</strong></p>
+			<p class="cookie_policy_text" style="top: 44%">Cookies are small text files that websites place on the computers and mobile devices of people who visit those websites.<br/>These text files allow a website to remember your device and how you interacted with the website, which is useful for a number of different purposes.</p>
+			<p class="cookie_policy_text" style="top: 67%"><strong>How do we use cookies?</strong></p>
+			<p class="cookie_policy_text" style="top: 71%">We use cookies to track the authorised user on the page. For example the user logs in and then the cookie is set on the browser tracking the user logged into the system.</p>
+			<p class="cookie_policy_text" style="top: 88%"><strong>Third Party Cookies</strong></p>
+			<p class="cookie_policy_text" style="top: 92%">This website does not use any third party cookies to track your device for any advertisement information or any of that kind.</p>
+			<p class="cookie_policy_text" style="top: 105%"><strong>Note</strong></p>
+			<p class="cookie_policy_text" style="top: 109%">By not accepting the cookies on this website the functionality of the system will not be available to you.<br/><br/> Our cookies do not handle any sensitive data and urge the user to acccept the cookies so that they can access the website.</p>
+		</p>
+		<p class="privacy_policy_container" style="height: 1800px;">
+			<figure><img class="privacy_exit" src="./uploads/close.png" alt="exit"/></figure>
+			<h1 class="privacy_policy_text" style="font-size: 2vw;">Privacy Policy</h1>
+			<p class="privacy_policy_text" style="top: 40%; "><strong>Type of Data Collected</strong><br/><br/>The data we collect from you the user, is your login information i.e. username and password. This is not deemed as sensitive data as yes it uniquely identifies you the user but it doesn't show anything specific about you as a person for example: your email address, address etc.<br/><br/><strong>How do we use your personal data?</strong><br/><br/>We use your personal data to uniquely identify you so that you can make your own purchases, add your own books to your cart. Having this information allows you the user to use the system with no problem and uniquely.<br/><br/><strong>Retention of your personal data</strong><br/><br/>We retain your username and your password in our database so that you can come back to the website and login using the same details. Having this aswell allows the user to keep things in their cart for the next time they login, having this is very useful to you the user.<br/><br/><strong>Transfer of your personal data</strong><br/><br/>Your information is stored on a local system this means that when you agree to this privacy policy your information could not be stored in the same state, country or province. Data is managed securely and with care.<br/><br/><strong>Your Rights</strong><br/><br/>You have the right to ensure that your data is being processed lawfully. Any data that you request will be sent to you in accordance with the Freedom of Information Act and Data Protection Act. We will provide personal data in statuatory time frames, to be able to access your personal data we may request further information. If you have any complaints you have the right to complain to the Information Commissioners Office(ICO).<br/><br/><strong>Any changes to thh privacy policy in the future will be on this page, you will also be notified.</strong><br/><br/><a href="/privacy" target="_blank">FULL POLICY HERE</a></p>
+		</p>
+		<main style="max-width: 100%; height: 100%; flex-direction: row; display: flex; flex-wrap: wrap;">
+			{{#if authorised}}
+				{{#each sub_data}}
+				<section class="home_stock">
+					<p>{{this.book_title}}</p>
+					<figure><img src="{{this.filepath}}" alt="Book Cover"/></figure>
+					<form class="home_form" method="post" action="/">
+						<input type="hidden" name="isbn" value="{{this.isbn}}"/>
+						<input type="submit" value="Add to cart"/>
+					</form>
+				</section>
+				{{/each}}
+			{{else}}
+				{{#if admin}}
+					<p>Admins can only see the stock, cannot purchase the stock but can manage the stock on the 'STOCK LEVELS' screen.</p>
+				{{else}}
+					<p style="width: 100%;">WELCOME TO THE HOME SCREEN!</p>
+				{{/if}}
+			{{/if}}
+
+			<p class="policies_container">
+				<a href="/terms" target="_blank">Terms of Use</a>
+				<a class="privacy">Privacy Policy</a>
+				<a id="cookie_policy_select" class="cookie_policy_select">Cookie Policy</a>
+			</p>
+		</main>
 	</body>
 </html>

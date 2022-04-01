@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Add Stock</title>
+		<meta name="description" content="form to add new books">
+		<meta name="author" content="Josh Taylor">
+		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+		<link href="/style.css" type="text/css" rel="stylesheet" />
+		<script type="module" src="/main.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Add Stock</h1>
+			{{#if authorised}}
+				<a href="/logout">Log out</a>
+			{{else}}
+				{{#if admin}}
+					<a href="/logout">Log out</a>
+				{{else}}
+					<a href="/login">Log in</a>
+				{{/if}}
+			{{/if}}
+		</header>
+	<main style="display: flex; justify-content: center;">
+        <form method="post" action="/add_stock" enctype="multipart/form-data" class="add_stock">
+            <label for="title">Book Name</label>
+			<input type="text" name="title" value="{{body.title}}"/>
+			<label for="author">Author</label>
+			<input type="text" name="author" value="{{body.author}}"/>
+			<label for="publication-date">Date</label>
+			<input type="date" name="publication_date" value="{{body.publication-date}}"/>
+			<label for="isbn">ISBN-13</label>
+			<input type="number" name="isbn" value="{{body.isbn}}"/>
+			<label for="description">Description</label>
+			<input type="text" name="description" value="{{body.description}}"/>
+			<label for="thumbnail">Thumbnail Image</label>
+			<input type="file" name="thumbnail" accept="image/*, .jpg, .jpeg, .png"/>
+			<label for="trade_price">Trade Price</label>
+			<input class="trade_price" type="range" min="1" max="100" name="trade_price" value="{{body.trade_value}}"/>
+			<p class="trade_value" style="width: 100%; text-align: center; margin: 0;margin-bottom: 2vw; border-bottom: 1px solid gray; padding: 1vw"></p>
+			<label for="retail_price">Retail Price</label>
+			<input class="retail_price" type="range" min="1" max="100" name="retail_price" value="{{body.retail_value}}"/>
+			<p class="retail_value" style="width: 100%; text-align: center; margin: 0;margin-bottom: 2vw; border-bottom: 1px solid gray; padding: 1vw"></p>
+			<label for="quantity">Quantity</label>
+			<input class="quantity" type="range" min="1" max="20" name="quantity" value="{{body.quantity}}"/>
+			<p class="quantity" style="width: 100%; text-align: center; margin: 0;margin-bottom: 2vw; border-bottom: 1px solid gray; padding: 1vw"></p>
+			<input type="submit" value="Submit"/>
+        </form>
+		<p class="policies_container">
+				<a class="terms">Terms of Use</a>
+				<a class="privacy">Privacy Policy</a>
+				<a id="cookie_policy_select" class="cookie_policy_select">Cookie Policy</a>
+		</p>
+	</main>
+	</body>
+</html>

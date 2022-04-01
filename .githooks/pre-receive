@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#performing checks to the code before i allow it to be pushed to a stable source code.
+
+#Linter has already ran at this point and if code has been successfully committed means the code is filename
+#so we will just check the formatting of the code and run the test suite one more time for peace of mind
+
+deno fmt --check --unstable
+
+./new.sh

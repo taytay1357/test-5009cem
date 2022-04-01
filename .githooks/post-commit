@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#adding anything in a post commit would be pointless due to the code already have been committed so i will use this as notification of the code being committed.
+
+echo "CODE HAS SUCCESSFULLY BEEN COMMITTED!"
