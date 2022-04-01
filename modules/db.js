@@ -15,7 +15,7 @@ const connectionData = {
   "/app": {
     hostname: "remotemysql.com",
     username: "5D8BNSOGd6",
-    password: "n8XX7ZMB1f",
+    password: "D81dGrao12",
     db: "5D8BNSOGd6",
   },
 };
