@@ -13,10 +13,10 @@ const connectionData = {
     db: "website",
   },
   "/app": {
-    hostname: "HOSTNAME",
-    username: "USERNAME",
-    password: "PASSWORD",
-    db: "DATABASE",
+    hostname: "remotemysql.com",
+    username: "5D8BNSOGd6",
+    password: "n8XX7ZMB1f",
+    db: "5D8BNSOGd6",
   },
 };
 
