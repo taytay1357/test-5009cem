@@ -12,7 +12,7 @@ This will configure the box ready for you to start development.
 > The process can take up to 15 min. Make sure you don't close the browser tab _or let your computer go into sleep mode_.
 
 To run the server:
-
+dwadawd
 ```shell
 $ deno run --allow-all --unstable index.js
 ```
