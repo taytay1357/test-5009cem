@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 try {
   let trade_slider = document.querySelector("input.trade_price");
-  console.log(trade_slider, trade_value_slider);
   let trade_value_slide = document.querySelector(
     "body > main > form > p.trade_value",
   );

@@ -38,7 +38,7 @@ router.get("/", async (context) => {
     cart_data = [];
   } else if (admin === undefined) {
     records = await getStock();
-    console.log(records)
+    console.log(records);
     cart_data = await getCart(authorised);
   }
   let counter = 0;
