@@ -35,7 +35,7 @@ jobs:
         run: ./new.sh
       
       - name: Perform user acceptance tests
-        run: deno test --unstable --filter ./uat/
+        run: deno test --unstable --allow-all ./uat/
         
       - name: Push all data to the cloud
         run: git push heroku main
